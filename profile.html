@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | LandSafe Connect</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Inter Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-light text-dark">
+
+<div class="container-fluid p-0">
+
+    <div class="row g-0">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="col-lg-3 col-xl-2 bg-dark text-white">
+
+            <div class="p-4">
+
+                <!-- Logo -->
+
+                <div class="d-flex align-items-center mb-4">
+
+                    <i class="bi bi-shield-fill-check text-success fs-2 me-2"></i>
+
+                    <div>
+                        <h5 class="mb-0 fw-bold">
+                            LandSafe
+                        </h5>
+
+                        <small class="text-secondary">
+                            CONNECT
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <hr class="border-secondary">
+
+
+                <!-- USER DASHBOARD -->
+
+                <p class="text-uppercase small text-secondary fw-semibold mb-2">
+                    User Dashboard
+                </p>
+
+
+                <div class="list-group">
+
+                    <a href="dashboard.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-grid me-2"></i>
+                        Dashboard
+
+                    </a>
+
+
+                    <a href="risk-alert.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Risk Alert
+
+                    </a>
+
+
+                    <a href="probability-risk.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-bar-chart me-2"></i>
+                        Probability Report
+
+                    </a>
+
+
+                    <a href="report-issue.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-flag me-2"></i>
+                        Report an Issue
+
+                    </a>
+
+
+                    <a href="risk-map.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-map me-2"></i>
+                        Live Risk Map
+
+                    </a>
+
+
+                    <a href="safety-guide.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-book me-2"></i>
+                        Safety Guide
+
+                    </a>
+
+
+                    <a href="history.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-clock-history me-2"></i>
+                        Previous Risk Data
+
+                    </a>
+
+
+                    <a href="sirens-alerts.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-bell me-2"></i>
+                        Sirens & Alerts
+
+                    </a>
+
+                </div>
+
+
+                <!-- ACCOUNT -->
+
+                <p class="text-uppercase small text-secondary fw-semibold mt-4 mb-2">
+                    Account
+                </p>
+
+
+                <div class="list-group">
+
+                    <!-- ACTIVE PROFILE -->
+
+                    <a href="profile.html"
+                       class="list-group-item list-group-item-action bg-success text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-person-circle me-2"></i>
+                        Profile
+
+                    </a>
+
+
+                    <a href="login.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-box-arrow-right me-2"></i>
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="col-lg-9 col-xl-10">
+
+
+            <!-- TOP HEADER -->
+
+            <header class="bg-white border-bottom px-4 py-3">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h4 class="mb-1 fw-bold">
+                            My Profile
+                        </h4>
+
+                        <p class="text-secondary mb-0">
+                            Manage your LandSafe Connect account information.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Profile icon -->
+
+                    <div class="bg-success text-white rounded-circle p-2">
+
+                        <i class="bi bi-person-fill fs-5"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+
+            <div class="p-4">
+
+
+                <!-- DEMO NOTICE -->
+
+                <div class="alert alert-warning d-flex align-items-center mb-4">
+
+                    <i class="bi bi-info-circle-fill me-2"></i>
+
+                    <div>
+
+                        <strong>Demo Mode:</strong>
+
+                        Profile information is currently stored only
+                        on the frontend. Account authentication and
+                        database integration will be connected later.
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PROFILE OVERVIEW ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <div class="row align-items-center">
+
+
+                            <!-- PROFILE ICON -->
+
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+
+                                <div class="bg-success text-white rounded-circle p-3 d-inline-flex">
+
+                                    <i class="bi bi-person-fill fs-1"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- USER INFORMATION -->
+
+                            <div class="col-md-7">
+
+                                <h4 class="fw-bold mb-1">
+                                    User
+                                </h4>
+
+                                <p class="text-secondary mb-2">
+                                    landsafe.user@example.com
+                                </p>
+
+                                <span class="badge text-bg-success">
+                                    User Account
+                                </span>
+
+                            </div>
+
+
+                            <!-- ACCOUNT STATUS -->
+
+                            <div class="col-md-3 text-md-end mt-3 mt-md-0">
+
+                                <span class="badge text-bg-success fs-6">
+
+                                    <i class="bi bi-check-circle me-1"></i>
+
+                                    Active
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PERSONAL INFORMATION ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+
+                        <h5 class="fw-bold mb-1">
+                            Personal Information
+                        </h5>
+
+                        <p class="text-secondary mb-0">
+                            Your basic account information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-body px-4 pb-4">
+
+                        <form>
+
+
+                            <!-- NAME -->
+
+                            <div class="row mb-3">
+
+                                <div class="col-md-6">
+
+                                    <label
+                                        for="firstName"
+                                        class="form-label fw-semibold">
+
+                                        First Name
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="firstName"
+                                        value="LandSafe">
+
+                                </div>
+
+
+                                <div class="col-md-6 mt-3 mt-md-0">
+
+                                    <label
+                                        for="lastName"
+                                        class="form-label fw-semibold">
+
+                                        Last Name
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="lastName"
+                                        value="User">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="email"
+                                    class="form-label fw-semibold">
+
+                                    Email Address
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    value="landsafe.user@example.com">
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="phone"
+                                    class="form-label fw-semibold">
+
+                                    Phone Number
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="phone"
+                                    placeholder="Enter phone number">
+
+                            </div>
+
+
+                            <!-- LOCATION -->
+
+                            <div class="row mb-3">
+
+                                <div class="col-md-6">
+
+                                    <label
+                                        for="state"
+                                        class="form-label fw-semibold">
+
+                                        State
+
+                                    </label>
+
+                                    <select
+                                        class="form-select"
+                                        id="state">
+
+                                        <option selected>
+                                            Assam
+                                        </option>
+
+                                        <option>
+                                            Meghalaya
+                                        </option>
+
+                                        <option>
+                                            Mizoram
+                                        </option>
+
+                                        <option>
+                                            Nagaland
+                                        </option>
+
+                                        <option>
+                                            Manipur
+                                        </option>
+
+                                        <option>
+                                            Tripura
+                                        </option>
+
+                                        <option>
+                                            Arunachal Pradesh
+                                        </option>
+
+                                        <option>
+                                            Sikkim
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="col-md-6 mt-3 mt-md-0">
+
+                                    <label
+                                        for="city"
+                                        class="form-label fw-semibold">
+
+                                        City
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="city"
+                                        value="Guwahati">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- UPDATE BUTTON -->
+
+                            <button
+                                type="button"
+                                id="saveProfile"
+                                class="btn btn-success">
+
+                                <i class="bi bi-check-lg me-2"></i>
+
+                                Save Changes
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= EMERGENCY INFORMATION ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+
+                        <h5 class="fw-bold mb-1">
+
+                            <i class="bi bi-person-exclamation text-danger me-2"></i>
+
+                            Emergency Contact
+
+                        </h5>
+
+                        <p class="text-secondary mb-0">
+                            Contact information that can be used during an emergency.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-body px-4 pb-4">
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="emergencyName"
+                                    class="form-label fw-semibold">
+
+                                    Contact Name
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="emergencyName"
+                                    placeholder="Emergency contact name">
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="emergencyPhone"
+                                    class="form-label fw-semibold">
+
+                                    Contact Number
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="emergencyPhone"
+                                    placeholder="Emergency contact number">
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="relationship"
+                                    class="form-label fw-semibold">
+
+                                    Relationship
+
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="relationship">
+
+                                    <option selected>
+                                        Select relationship
+                                    </option>
+
+                                    <option>
+                                        Parent
+                                    </option>
+
+                                    <option>
+                                        Guardian
+                                    </option>
+
+                                    <option>
+                                        Sibling
+                                    </option>
+
+                                    <option>
+                                        Friend
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="bloodGroup"
+                                    class="form-label fw-semibold">
+
+                                    Blood Group
+
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="bloodGroup">
+
+                                    <option selected>
+                                        Select blood group
+                                    </option>
+
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="saveEmergency"
+                            class="btn btn-success mt-4">
+
+                            <i class="bi bi-check-lg me-2"></i>
+
+                            Save Emergency Information
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ALERT PREFERENCES ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+
+                        <h5 class="fw-bold mb-1">
+
+                            <i class="bi bi-bell text-success me-2"></i>
+
+                            Notification Preferences
+
+                        </h5>
+
+                        <p class="text-secondary mb-0">
+                            Manage the alerts you want to receive.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-body px-4 pb-4">
+
+
+                        <!-- FLOOD -->
+
+                        <div class="form-check form-switch mb-3">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="floodNotification"
+                                checked>
+
+                            <label
+                                class="form-check-label"
+                                for="floodNotification">
+
+                                <strong>
+                                    Flood Alerts
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Receive notifications about flood risks.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- LANDSLIDE -->
+
+                        <div class="form-check form-switch mb-3">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="landslideNotification"
+                                checked>
+
+                            <label
+                                class="form-check-label"
+                                for="landslideNotification">
+
+                                <strong>
+                                    Landslide Alerts
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Receive notifications about landslide risks.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- RAINFALL -->
+
+                        <div class="form-check form-switch mb-3">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="rainfallNotification"
+                                checked>
+
+                            <label
+                                class="form-check-label"
+                                for="rainfallNotification">
+
+                                <strong>
+                                    Heavy Rainfall Alerts
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Receive notifications for heavy rainfall.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- SIREN -->
+
+                        <div class="form-check form-switch">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="sirenNotification"
+                                checked>
+
+                            <label
+                                class="form-check-label"
+                                for="sirenNotification">
+
+                                <strong>
+                                    Emergency Siren
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Allow emergency siren notifications on this device.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SECURITY ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+
+                        <h5 class="fw-bold mb-1">
+
+                            <i class="bi bi-shield-lock text-success me-2"></i>
+
+                            Account Security
+
+                        </h5>
+
+                        <p class="text-secondary mb-0">
+                            Manage your account security settings.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-body px-4 pb-4">
+
+
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Last updated: Not connected
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-success">
+
+                                Change Password
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+
+                                <strong>
+                                    Account Status
+                                </strong>
+
+                                <br>
+
+                                <small class="text-secondary">
+                                    Your account is currently active.
+                                </small>
+
+                            </div>
+
+
+                            <span class="badge text-bg-success">
+                                Active
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ACCOUNT INFORMATION ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h5 class="fw-bold mb-3">
+                            Account Information
+                        </h5>
+
+
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+
+                                <div class="border rounded p-3">
+
+                                    <small class="text-secondary">
+                                        Account Type
+                                    </small>
+
+                                    <div class="fw-semibold mt-1">
+                                        User
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-4">
+
+                                <div class="border rounded p-3">
+
+                                    <small class="text-secondary">
+                                        Member Since
+                                    </small>
+
+                                    <div class="fw-semibold mt-1">
+                                        September 2026
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-4">
+
+                                <div class="border rounded p-3">
+
+                                    <small class="text-secondary">
+                                        Risk Assessments
+                                    </small>
+
+                                    <div class="fw-semibold mt-1">
+                                        12
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DISCLAIMER ================= -->
+
+                <div class="alert alert-secondary small">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    LandSafe Connect provides AI-based risk assessment and
+                    emergency information for decision support. It does not
+                    replace official disaster-management warnings or emergency
+                    services.
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Simple Profile Actions -->
+
+<script>
+
+    document.getElementById("saveProfile").addEventListener("click", function () {
+
+        alert("Profile information saved successfully in demo mode.");
+
+    });
+
+
+    document.getElementById("saveEmergency").addEventListener("click", function () {
+
+        alert("Emergency contact information saved successfully in demo mode.");
+
+    });
+
+</script>
+
+</body>
+</html>

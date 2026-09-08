@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Probability Report | LandSafe Connect</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body class="bg-light">
+
+<div class="container-fluid p-0">
+
+    <div class="row g-0">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="col-lg-3 col-xl-2 bg-dark text-white border-0">
+
+            <div class="p-4">
+
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
+
+                <div class="d-flex align-items-center gap-2 mb-4">
+
+                    <div class="bg-success rounded-3 p-2">
+
+                        <i class="bi bi-shield-check fs-4"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5 class="fw-bold mb-0">
+                            LandSafe
+                        </h5>
+
+                        <small class="text-white-50">
+                            Connect
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     USER PROFILE
+                ================================================== -->
+
+                <div class="bg-secondary bg-opacity-25 rounded-3 p-3 mb-4 border-0">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div
+                            class="bg-success rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width:42px;height:42px;"
+                        >
+
+                            <i class="bi bi-person-fill"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h6 class="mb-0 fw-semibold">
+                                User
+                            </h6>
+
+                            <small class="text-white-50">
+                                Citizen
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     MAIN MENU
+                ================================================== -->
+
+                <p class="text-uppercase text-white-50 small fw-semibold mb-2">
+                    Main Menu
+                </p>
+
+
+                <div class="list-group list-group-flush border-0 mb-4">
+
+
+                    <!-- Dashboard -->
+
+                    <a
+                        href="dashboard.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-grid me-2"></i>
+
+                        Dashboard
+
+                    </a>
+
+
+                    <!-- Risk Alert -->
+
+                    <a
+                        href="risk-alert.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+
+                        Risk Alert
+
+                    </a>
+
+
+                    <!-- Probability Report -->
+
+                    <a
+                        href="probability-risk.html"
+                        class="list-group-item list-group-item-action bg-success text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-bar-chart-line me-2"></i>
+
+                        Probability Report
+
+                    </a>
+
+
+                    <!-- Report Issue -->
+
+                    <a
+                        href="report-issue.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-flag me-2"></i>
+
+                        Report an Issue
+
+                    </a>
+
+
+                    <!-- Live Risk Map -->
+
+                    <a
+                        href="risk-map.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-map me-2"></i>
+
+                        Live Risk Map
+
+                    </a>
+
+
+                    <!-- Safety Guide -->
+
+                    <a
+                        href="safety-guide.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-book me-2"></i>
+
+                        Safety Guide
+
+                    </a>
+
+
+                    <!-- Previous Risk Data -->
+
+                    <a
+                        href="history.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-clock-history me-2"></i>
+
+                        Previous Risk Data
+
+                    </a>
+
+
+                    <!-- Sirens & Alerts -->
+
+                    <a
+                        href="sirens-alerts.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-broadcast me-2"></i>
+
+                        Sirens & Alerts
+
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     ACCOUNT
+                ================================================== -->
+
+                <p class="text-uppercase text-white-50 small fw-semibold mb-2">
+                    Account
+                </p>
+
+
+                <div class="list-group list-group-flush border-0">
+
+
+                    <!-- Profile -->
+
+                    <a
+                        href="profile.html"
+                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
+                    >
+
+                        <i class="bi bi-person me-2"></i>
+
+                        Profile
+
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     EMERGENCY NOTICE
+                ================================================== -->
+
+                <div class="alert alert-warning mt-4 mb-3 small border-0">
+
+                    <div class="d-flex gap-2">
+
+                        <i class="bi bi-info-circle-fill"></i>
+
+                        <div>
+
+                            <strong>
+                                Emergency?
+                            </strong>
+
+                            <div>
+                                Follow official emergency instructions.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOGOUT
+                ================================================== -->
+
+                <a
+                    href="login.html"
+                    class="btn btn-outline-light w-100"
+                >
+
+                    <i class="bi bi-box-arrow-right me-2"></i>
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="col">
+
+            <div class="p-3 p-md-4 p-xl-5">
+
+
+                <!-- =================================================
+                     HEADER
+                ================================================== -->
+
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4"
+                >
+
+                    <div>
+
+                        <h2 class="fw-bold mb-1">
+                            Probability Report
+                        </h2>
+
+                        <p class="text-secondary mb-0">
+                            Detailed probability-based environmental
+                            risk assessment
+                        </p>
+
+                    </div>
+
+
+                    <span class="badge bg-white text-dark border fs-6 px-3 py-2">
+
+                        <i class="bi bi-geo-alt me-1"></i>
+
+                        Guwahati, Assam
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     OVERALL PROBABILITY
+                ================================================== -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <div class="row align-items-center g-4">
+
+
+                            <!-- Overall Percentage -->
+
+                            <div class="col-md-4 text-center">
+
+                                <span class="badge bg-danger rounded-pill px-3 py-2 mb-2">
+
+                                    High Risk
+
+                                </span>
+
+
+                                <h1 class="display-4 fw-bold text-danger mb-0">
+                                    78%
+                                </h1>
+
+
+                                <p class="text-secondary mb-0">
+                                    Overall Risk Probability
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- Explanation -->
+
+                            <div class="col-md-8">
+
+                                <h5 class="fw-bold">
+                                    Current Risk Assessment
+                                </h5>
+
+
+                                <p class="text-secondary mb-3">
+
+                                    The current assessment indicates an
+                                    elevated probability of environmental
+                                    hazards in the selected location.
+
+                                </p>
+
+
+                                <div class="progress mb-2">
+
+                                    <div
+                                        class="progress-bar bg-danger"
+                                        role="progressbar"
+                                        style="width:78%"
+                                    >
+                                    </div>
+
+                                </div>
+
+
+                                <div class="d-flex justify-content-between">
+
+                                    <small class="text-secondary">
+                                        Low
+                                    </small>
+
+                                    <small class="text-secondary">
+                                        Moderate
+                                    </small>
+
+                                    <small class="text-secondary">
+                                        High
+                                    </small>
+
+                                    <small class="text-secondary">
+                                        Critical
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HAZARD PROBABILITIES
+                ================================================== -->
+
+                <div class="row g-3 mb-4">
+
+
+                    <!-- Landslide -->
+
+                    <div class="col-md-6">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body p-4">
+
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-3"
+                                >
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            Landslide Probability
+                                        </small>
+
+                                        <h2 class="fw-bold mb-0">
+                                            82%
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="bg-danger-subtle text-danger rounded-3 p-2">
+
+                                        <i class="bi bi-mountains fs-4"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="progress mb-3">
+
+                                    <div
+                                        class="progress-bar bg-danger"
+                                        role="progressbar"
+                                        style="width:82%"
+                                    >
+                                    </div>
+
+                                </div>
+
+
+                                <div class="d-flex justify-content-between">
+
+                                    <span class="badge bg-danger-subtle text-danger">
+                                        High
+                                    </span>
+
+                                    <small class="text-secondary">
+                                        82 / 100
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Flood -->
+
+                    <div class="col-md-6">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body p-4">
+
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-3"
+                                >
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            Flood Probability
+                                        </small>
+
+                                        <h2 class="fw-bold mb-0">
+                                            58%
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="bg-primary-subtle text-primary rounded-3 p-2">
+
+                                        <i class="bi bi-water fs-4"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="progress mb-3">
+
+                                    <div
+                                        class="progress-bar bg-primary"
+                                        role="progressbar"
+                                        style="width:58%"
+                                    >
+                                    </div>
+
+                                </div>
+
+
+                                <div class="d-flex justify-content-between">
+
+                                    <span class="badge bg-warning-subtle text-warning-emphasis">
+                                        Moderate
+                                    </span>
+
+                                    <small class="text-secondary">
+                                        58 / 100
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TREND + FACTORS
+                ================================================== -->
+
+                <div class="row g-3 mb-4">
+
+
+                    <!-- Probability Trend -->
+
+                    <div class="col-12 col-lg-7">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body p-3">
+
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-2"
+                                >
+
+                                    <div>
+
+                                        <h5 class="fw-bold mb-1">
+                                            Risk Probability Trend
+                                        </h5>
+
+                                        <small class="text-secondary">
+                                            Recent assessment trend
+                                        </small>
+
+                                    </div>
+
+
+                                    <span class="badge bg-light text-dark border">
+                                        Demo Data
+                                    </span>
+
+                                </div>
+
+
+                                <canvas
+                                    id="probabilityChart"
+                                    height="90"
+                                >
+                                </canvas>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Risk Factors -->
+
+                    <div class="col-12 col-lg-5">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body p-3">
+
+                                <h5 class="fw-bold mb-3">
+                                    Main Risk Factors
+                                </h5>
+
+
+                                <!-- Rainfall -->
+
+                                <div class="mb-3">
+
+                                    <div
+                                        class="d-flex justify-content-between mb-1"
+                                    >
+
+                                        <small class="text-secondary">
+                                            Rainfall
+                                        </small>
+
+                                        <small class="fw-semibold">
+                                            72%
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="progress">
+
+                                        <div
+                                            class="progress-bar bg-warning"
+                                            style="width:72%"
+                                        >
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- Soil Saturation -->
+
+                                <div class="mb-3">
+
+                                    <div
+                                        class="d-flex justify-content-between mb-1"
+                                    >
+
+                                        <small class="text-secondary">
+                                            Soil Saturation
+                                        </small>
+
+                                        <small class="fw-semibold">
+                                            84%
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="progress">
+
+                                        <div
+                                            class="progress-bar bg-danger"
+                                            style="width:84%"
+                                        >
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- Terrain -->
+
+                                <div class="mb-3">
+
+                                    <div
+                                        class="d-flex justify-content-between mb-1"
+                                    >
+
+                                        <small class="text-secondary">
+                                            Terrain Slope
+                                        </small>
+
+                                        <small class="fw-semibold">
+                                            61%
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="progress">
+
+                                        <div
+                                            class="progress-bar bg-warning"
+                                            style="width:61%"
+                                        >
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- Water -->
+
+                                <div>
+
+                                    <div
+                                        class="d-flex justify-content-between mb-1"
+                                    >
+
+                                        <small class="text-secondary">
+                                            Water Proximity
+                                        </small>
+
+                                        <small class="fw-semibold">
+                                            55%
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="progress">
+
+                                        <div
+                                            class="progress-bar bg-info"
+                                            style="width:55%"
+                                        >
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PROBABILITY INTERPRETATION
+                ================================================== -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <div class="d-flex align-items-center gap-2 mb-3">
+
+                            <i class="bi bi-info-circle-fill text-primary fs-4"></i>
+
+                            <h5 class="fw-bold mb-0">
+                                Understanding the Probability
+                            </h5>
+
+                        </div>
+
+
+                        <div class="row g-3">
+
+
+                            <!-- Low -->
+
+                            <div class="col-md-6 col-xl-3">
+
+                                <div class="border rounded-3 p-3 h-100">
+
+                                    <span class="badge bg-success mb-2">
+                                        0–30%
+                                    </span>
+
+                                    <h6 class="fw-bold">
+                                        Low
+                                    </h6>
+
+                                    <p class="small text-secondary mb-0">
+
+                                        Environmental conditions indicate
+                                        relatively low hazard probability.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Moderate -->
+
+                            <div class="col-md-6 col-xl-3">
+
+                                <div class="border rounded-3 p-3 h-100">
+
+                                    <span class="badge bg-warning text-dark mb-2">
+                                        31–60%
+                                    </span>
+
+                                    <h6 class="fw-bold">
+                                        Moderate
+                                    </h6>
+
+                                    <p class="small text-secondary mb-0">
+
+                                        Conditions require monitoring and
+                                        basic preparedness.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- High -->
+
+                            <div class="col-md-6 col-xl-3">
+
+                                <div class="border rounded-3 p-3 h-100">
+
+                                    <span class="badge bg-danger mb-2">
+                                        61–80%
+                                    </span>
+
+                                    <h6 class="fw-bold">
+                                        High
+                                    </h6>
+
+                                    <p class="small text-secondary mb-0">
+
+                                        Increased caution and preparation
+                                        are recommended.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Critical -->
+
+                            <div class="col-md-6 col-xl-3">
+
+                                <div class="border rounded-3 p-3 h-100">
+
+                                    <span class="badge bg-dark mb-2">
+                                        81–100%
+                                    </span>
+
+                                    <h6 class="fw-bold">
+                                        Critical
+                                    </h6>
+
+                                    <p class="small text-secondary mb-0">
+
+                                        Follow official emergency
+                                        instructions and evacuation guidance.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ASSESSMENT FACTORS
+                ================================================== -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <div class="mb-4">
+
+                            <h5 class="fw-bold mb-1">
+                                Assessment Factors
+                            </h5>
+
+                            <small class="text-secondary">
+                                Environmental indicators considered in
+                                the demonstration assessment
+                            </small>
+
+                        </div>
+
+
+                        <div class="table-responsive">
+
+                            <table class="table align-middle mb-0">
+
+                                <thead class="table-light">
+
+                                    <tr>
+
+                                        <th>
+                                            Factor
+                                        </th>
+
+                                        <th>
+                                            Condition
+                                        </th>
+
+                                        <th>
+                                            Contribution
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+
+                                    <!-- Rainfall -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <i class="bi bi-cloud-rain me-2 text-primary"></i>
+
+                                            Rainfall
+
+                                        </td>
+
+                                        <td>
+                                            High
+                                        </td>
+
+                                        <td>
+                                            72%
+                                        </td>
+
+                                        <td>
+
+                                            <span class="badge bg-warning text-dark">
+                                                Elevated
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <!-- Soil -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <i class="bi bi-layers me-2 text-danger"></i>
+
+                                            Soil Saturation
+
+                                        </td>
+
+                                        <td>
+                                            High
+                                        </td>
+
+                                        <td>
+                                            84%
+                                        </td>
+
+                                        <td>
+
+                                            <span class="badge bg-danger">
+                                                High
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <!-- Terrain -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <i class="bi bi-bar-chart-steps me-2 text-warning"></i>
+
+                                            Terrain Slope
+
+                                        </td>
+
+                                        <td>
+                                            Moderate
+                                        </td>
+
+                                        <td>
+                                            61%
+                                        </td>
+
+                                        <td>
+
+                                            <span class="badge bg-warning text-dark">
+                                                Elevated
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <!-- Water -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <i class="bi bi-water me-2 text-info"></i>
+
+                                            Water Proximity
+
+                                        </td>
+
+                                        <td>
+                                            Moderate
+                                        </td>
+
+                                        <td>
+                                            55%
+                                        </td>
+
+                                        <td>
+
+                                            <span class="badge bg-info">
+                                                Moderate
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RECOMMENDED ACTIONS
+                ================================================== -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4"
+                        >
+
+                            <div>
+
+                                <h5 class="fw-bold mb-1">
+                                    Recommended Actions
+                                </h5>
+
+                                <small class="text-secondary">
+                                    Suggested precautions based on the
+                                    current assessment
+                                </small>
+
+                            </div>
+
+
+                            <span class="badge bg-success">
+                                Safety First
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Action 1 -->
+
+                        <div class="d-flex gap-3 mb-4">
+
+                            <span
+                                class="badge rounded-circle bg-success d-inline-flex align-items-center justify-content-center p-2 fs-6 lh-1 flex-shrink-0"
+                            >
+                                1
+                            </span>
+
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+                                    Monitor environmental conditions
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Continue monitoring rainfall, weather
+                                    conditions, and official warnings.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Action 2 -->
+
+                        <div class="d-flex gap-3 mb-4">
+
+                            <span
+                                class="badge rounded-circle bg-success d-inline-flex align-items-center justify-content-center p-2 fs-6 lh-1 flex-shrink-0"
+                            >
+                                2
+                            </span>
+
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+                                    Avoid unstable slopes
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Avoid steep or visibly unstable terrain
+                                    during periods of heavy rainfall.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Action 3 -->
+
+                        <div class="d-flex gap-3 mb-4">
+
+                            <span
+                                class="badge rounded-circle bg-success d-inline-flex align-items-center justify-content-center p-2 fs-6 lh-1 flex-shrink-0"
+                            >
+                                3
+                            </span>
+
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+                                    Keep emergency supplies ready
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Keep drinking water, medicines, a torch,
+                                    power bank, and important documents ready.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Action 4 -->
+
+                        <div class="d-flex gap-3">
+
+                            <span
+                                class="badge rounded-circle bg-success d-inline-flex align-items-center justify-content-center p-2 fs-6 lh-1 flex-shrink-0"
+                            >
+                                4
+                            </span>
+
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+                                    Follow official instructions
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Follow evacuation or emergency instructions
+                                    issued by authorized authorities.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DEMO NOTICE
+                ================================================== -->
+
+                <div class="alert alert-info border-0 shadow-sm">
+
+                    <div class="d-flex gap-3">
+
+                        <i class="bi bi-info-circle-fill fs-5"></i>
+
+                        <div>
+
+                            <strong>
+                                Demo Information
+                            </strong>
+
+                            <p class="small mb-0 mt-1">
+
+                                The probability values shown on this page
+                                are demonstration values for the LandSafe
+                                Connect interface. They are not live disaster
+                                predictions. Once the backend, environmental
+                                data sources, and trained machine-learning
+                                models are connected, these values can be
+                                generated from actual input data.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DISCLAIMER
+                ================================================== -->
+
+                <p class="small text-secondary text-center mt-4 mb-0">
+
+                    LandSafe Connect provides AI-based risk assessment and
+                    emergency information for decision support. It does not
+                    replace official disaster-management warnings or
+                    emergency services.
+
+                </p>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =============================================================
+     CHART
+============================================================== -->
+
+<script>
+
+const probabilityChart =
+    document.getElementById("probabilityChart");
+
+
+new Chart(probabilityChart, {
+
+    type: "line",
+
+
+    data: {
+
+        labels: [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+
+
+        datasets: [
+
+            {
+
+                label: "Risk Probability",
+
+                data: [
+                    42,
+                    48,
+                    51,
+                    57,
+                    64,
+                    71,
+                    78
+                ],
+
+
+                tension: 0.35,
+
+                fill: true,
+
+                pointRadius: 3,
+
+                pointHoverRadius: 5
+
+            }
+
+        ]
+
+    },
+
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: true,
+
+        aspectRatio: 2.5,
+
+
+        plugins: {
+
+            legend: {
+
+                display: false
+
+            }
+
+        },
+
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true,
+
+                max: 100,
+
+
+                ticks: {
+
+                    callback: function(value) {
+
+                        return value + "%";
+
+                    }
+
+                }
+
+            },
+
+
+            x: {
+
+                grid: {
+
+                    display: false
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>

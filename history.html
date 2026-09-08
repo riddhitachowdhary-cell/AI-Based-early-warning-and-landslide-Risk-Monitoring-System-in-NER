@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Previous Risk Data - LandSafe Connect</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body class="bg-light text-dark">
+
+
+<div class="container-fluid p-0">
+
+    <div class="row g-0">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="col-lg-3 col-xl-2 bg-dark text-white">
+
+            <div class="p-4">
+
+                <!-- LOGO -->
+
+                <div class="d-flex align-items-center gap-2 mb-4">
+
+                    <i class="bi bi-shield-fill-check fs-3 text-success"></i>
+
+                    <div>
+
+                        <h5 class="mb-0 fw-bold">
+                            LandSafe
+                        </h5>
+
+                        <small class="text-secondary">
+                            Connect
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <hr class="border-secondary">
+
+
+                <!-- USER DASHBOARD -->
+
+                <p class="text-secondary small mb-2">
+                    USER DASHBOARD
+                </p>
+
+
+                <div class="list-group list-group-flush border-0">
+
+
+                    <a href="dashboard.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-grid me-2"></i>
+                        Dashboard
+
+                    </a>
+
+
+                    <a href="risk-alert.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Risk Alert
+
+                    </a>
+
+
+                    <a href="probability-risk.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-bar-chart me-2"></i>
+                        Probability Report
+
+                    </a>
+
+
+                    <a href="report-issue.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-flag me-2"></i>
+                        Report an Issue
+
+                    </a>
+
+
+                    <a href="live-risk-map.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-map me-2"></i>
+                        Live Risk Map
+
+                    </a>
+
+
+                    <a href="safety-guide.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-shield-check me-2"></i>
+                        Safety Guide
+
+                    </a>
+
+
+                    <a href="history.html"
+                       class="list-group-item list-group-item-action bg-success text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-clock-history me-2"></i>
+                        Previous Risk Data
+
+                    </a>
+
+
+                    <a href="sirens-alerts.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-bell me-2"></i>
+                        Sirens & Alerts
+
+                    </a>
+
+                </div>
+
+
+                <hr class="border-secondary my-4">
+
+
+                <!-- ACCOUNT -->
+
+                <p class="text-secondary small mb-2">
+                    ACCOUNT
+                </p>
+
+
+                <div class="list-group list-group-flush border-0">
+
+
+                    <a href="profile.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded mb-1">
+
+                        <i class="bi bi-person me-2"></i>
+                        Profile
+
+                    </a>
+
+
+                    <a href="login.html"
+                       class="list-group-item list-group-item-action bg-dark text-white border-0 rounded">
+
+                        <i class="bi bi-box-arrow-right me-2"></i>
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="col-lg-9 col-xl-10">
+
+
+            <!-- HEADER -->
+
+            <div class="bg-white border-bottom px-4 py-3">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h4 class="fw-bold mb-1">
+                            Previous Risk Data
+                        </h4>
+
+                        <p class="text-secondary mb-0">
+                            Review your previous disaster risk assessments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-success text-white rounded-circle p-2">
+
+                        <i class="bi bi-person fs-5"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <div class="p-4">
+
+
+                <!-- DEMO NOTICE -->
+
+                <div class="alert alert-info d-flex align-items-start gap-3">
+
+                    <i class="bi bi-info-circle-fill fs-4"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+                            Historical Data Status
+                        </h6>
+
+                        <p class="mb-0">
+                            The records displayed on this page are demonstration
+                            data. Actual assessment history will be loaded from
+                            the LandSafe backend after the database and ML
+                            prediction system are connected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= SUMMARY CARDS ================= -->
+
+                <div class="row g-3 mb-4">
+
+
+                    <!-- TOTAL -->
+
+                    <div class="col-md-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex align-items-center gap-3">
+
+                                    <div class="bg-primary-subtle text-primary rounded-circle p-3">
+
+                                        <i class="bi bi-clipboard-data fs-4"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            Total Assessments
+                                        </small>
+
+                                        <h4 class="fw-bold mb-0">
+                                            12
+                                        </h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HIGH RISK -->
+
+                    <div class="col-md-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex align-items-center gap-3">
+
+                                    <div class="bg-danger-subtle text-danger rounded-circle p-3">
+
+                                        <i class="bi bi-exclamation-triangle fs-4"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            High Risk
+                                        </small>
+
+                                        <h4 class="fw-bold mb-0">
+                                            4
+                                        </h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MODERATE -->
+
+                    <div class="col-md-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex align-items-center gap-3">
+
+                                    <div class="bg-warning-subtle text-warning rounded-circle p-3">
+
+                                        <i class="bi bi-exclamation-circle fs-4"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            Moderate Risk
+                                        </small>
+
+                                        <h4 class="fw-bold mb-0">
+                                            5
+                                        </h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LOW -->
+
+                    <div class="col-md-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex align-items-center gap-3">
+
+                                    <div class="bg-success-subtle text-success rounded-circle p-3">
+
+                                        <i class="bi bi-check-circle fs-4"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small class="text-secondary">
+                                            Low Risk
+                                        </small>
+
+                                        <h4 class="fw-bold mb-0">
+                                            3
+                                        </h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= TREND CHART ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                            <div>
+
+                                <h5 class="fw-bold mb-1">
+                                    Risk Trend
+                                </h5>
+
+                                <p class="text-secondary mb-0">
+                                    Overall risk score from previous assessments.
+                                </p>
+
+                            </div>
+
+
+                            <span class="badge bg-light text-dark border">
+                                Last 12 assessments
+                            </span>
+
+                        </div>
+
+
+                        <canvas
+                            id="riskTrendChart"
+                            height="100">
+                        </canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= FILTERS ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h5 class="fw-bold mb-3">
+                            Filter Assessments
+                        </h5>
+
+
+                        <div class="row g-3">
+
+
+                            <!-- LOCATION -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="locationFilter"
+                                    class="form-label fw-semibold">
+
+                                    Location
+
+                                </label>
+
+
+                                <select
+                                    id="locationFilter"
+                                    class="form-select">
+
+                                    <option value="">
+                                        All Locations
+                                    </option>
+
+                                    <option value="Guwahati">
+                                        Guwahati
+                                    </option>
+
+                                    <option value="Shillong">
+                                        Shillong
+                                    </option>
+
+                                    <option value="Aizawl">
+                                        Aizawl
+                                    </option>
+
+                                    <option value="Gangtok">
+                                        Gangtok
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- HAZARD -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="hazardFilter"
+                                    class="form-label fw-semibold">
+
+                                    Hazard
+
+                                </label>
+
+
+                                <select
+                                    id="hazardFilter"
+                                    class="form-select">
+
+                                    <option value="">
+                                        All Hazards
+                                    </option>
+
+                                    <option value="Flood">
+                                        Flood
+                                    </option>
+
+                                    <option value="Landslide">
+                                        Landslide
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- RISK -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="riskFilter"
+                                    class="form-label fw-semibold">
+
+                                    Risk Level
+
+                                </label>
+
+
+                                <select
+                                    id="riskFilter"
+                                    class="form-select">
+
+                                    <option value="">
+                                        All Risk Levels
+                                    </option>
+
+                                    <option value="High">
+                                        High
+                                    </option>
+
+                                    <option value="Moderate">
+                                        Moderate
+                                    </option>
+
+                                    <option value="Low">
+                                        Low
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= ASSESSMENT TABLE ================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                            <div>
+
+                                <h5 class="fw-bold mb-1">
+                                    Assessment History
+                                </h5>
+
+                                <p class="text-secondary mb-0">
+                                    Your recent risk assessment records.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="btn btn-outline-primary"
+                                id="refreshButton">
+
+                                <i class="bi bi-arrow-clockwise me-2"></i>
+
+                                Refresh
+
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="table-responsive">
+
+                            <table class="table align-middle">
+
+                                <thead class="table-light">
+
+                                    <tr>
+
+                                        <th>
+                                            Date
+                                        </th>
+
+                                        <th>
+                                            Location
+                                        </th>
+
+                                        <th>
+                                            Hazard
+                                        </th>
+
+                                        <th>
+                                            Flood
+                                        </th>
+
+                                        <th>
+                                            Landslide
+                                        </th>
+
+                                        <th>
+                                            Overall Risk
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="historyTableBody">
+
+
+                                    <tr>
+
+                                        <td>
+                                            06 Sep 2026
+                                        </td>
+
+                                        <td>
+                                            Guwahati
+                                        </td>
+
+                                        <td>
+                                            Flood
+                                        </td>
+
+                                        <td>
+                                            72%
+                                        </td>
+
+                                        <td>
+                                            35%
+                                        </td>
+
+                                        <td>
+                                            <strong>78%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-danger rounded-pill">
+                                                High
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('06 Sep 2026','Guwahati','Flood',72,35,78)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            03 Sep 2026
+                                        </td>
+
+                                        <td>
+                                            Shillong
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            42%
+                                        </td>
+
+                                        <td>
+                                            76%
+                                        </td>
+
+                                        <td>
+                                            <strong>74%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-danger rounded-pill">
+                                                High
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('03 Sep 2026','Shillong','Landslide',42,76,74)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            29 Aug 2026
+                                        </td>
+
+                                        <td>
+                                            Aizawl
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            38%
+                                        </td>
+
+                                        <td>
+                                            64%
+                                        </td>
+
+                                        <td>
+                                            <strong>65%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-danger rounded-pill">
+                                                High
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('29 Aug 2026','Aizawl','Landslide',38,64,65)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            24 Aug 2026
+                                        </td>
+
+                                        <td>
+                                            Gangtok
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            30%
+                                        </td>
+
+                                        <td>
+                                            55%
+                                        </td>
+
+                                        <td>
+                                            <strong>55%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-warning text-dark rounded-pill">
+                                                Moderate
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('24 Aug 2026','Gangtok','Landslide',30,55,55)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            18 Aug 2026
+                                        </td>
+
+                                        <td>
+                                            Guwahati
+                                        </td>
+
+                                        <td>
+                                            Flood
+                                        </td>
+
+                                        <td>
+                                            58%
+                                        </td>
+
+                                        <td>
+                                            25%
+                                        </td>
+
+                                        <td>
+                                            <strong>52%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-warning text-dark rounded-pill">
+                                                Moderate
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('18 Aug 2026','Guwahati','Flood',58,25,52)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            12 Aug 2026
+                                        </td>
+
+                                        <td>
+                                            Shillong
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            28%
+                                        </td>
+
+                                        <td>
+                                            48%
+                                        </td>
+
+                                        <td>
+                                            <strong>48%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-warning text-dark rounded-pill">
+                                                Moderate
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('12 Aug 2026','Shillong','Landslide',28,48,48)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            05 Aug 2026
+                                        </td>
+
+                                        <td>
+                                            Aizawl
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            22%
+                                        </td>
+
+                                        <td>
+                                            35%
+                                        </td>
+
+                                        <td>
+                                            <strong>35%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-warning text-dark rounded-pill">
+                                                Moderate
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('05 Aug 2026','Aizawl','Landslide',22,35,35)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            28 Jul 2026
+                                        </td>
+
+                                        <td>
+                                            Gangtok
+                                        </td>
+
+                                        <td>
+                                            Landslide
+                                        </td>
+
+                                        <td>
+                                            18%
+                                        </td>
+
+                                        <td>
+                                            27%
+                                        </td>
+
+                                        <td>
+                                            <strong>27%</strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge bg-success rounded-pill">
+                                                Low
+                                            </span>
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="btn btn-sm btn-outline-primary"
+                                                onclick="viewAssessment('28 Jul 2026','Gangtok','Landslide',18,27,27)">
+
+                                                <i class="bi bi-eye"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= DISCLAIMER ================= -->
+
+                <div class="alert alert-secondary d-flex align-items-start gap-3">
+
+                    <i class="bi bi-shield-check fs-4"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold">
+                            Important
+                        </h6>
+
+                        <p class="mb-0">
+
+                            Historical risk values shown above are demonstration
+                            values for the frontend. Actual records will be
+                            generated from the connected risk-assessment system.
+                            LandSafe Connect is a decision-support system and
+                            does not replace official disaster warnings.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+    class="modal fade"
+    id="assessmentModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    Assessment Details
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div id="assessmentDetails"></div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Close
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= BOOTSTRAP ================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<script>
+
+
+// =========================================
+// RISK TREND CHART
+// =========================================
+
+const chartContext =
+    document.getElementById("riskTrendChart");
+
+
+new Chart(chartContext, {
+
+    type: "line",
+
+    data: {
+
+        labels: [
+            "28 Jul",
+            "05 Aug",
+            "12 Aug",
+            "18 Aug",
+            "24 Aug",
+            "29 Aug",
+            "03 Sep",
+            "06 Sep"
+        ],
+
+        datasets: [
+
+            {
+
+                label: "Overall Risk",
+
+                data: [
+                    27,
+                    35,
+                    48,
+                    52,
+                    55,
+                    65,
+                    74,
+                    78
+                ],
+
+                tension: 0.3,
+
+                borderWidth: 2,
+
+                pointRadius: 4
+
+            }
+
+        ]
+
+    },
+
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: true,
+
+        aspectRatio: 2.8,
+
+        plugins: {
+
+            legend: {
+
+                display: true
+
+            }
+
+        },
+
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true,
+
+                max: 100,
+
+                title: {
+
+                    display: true,
+
+                    text: "Risk Probability (%)"
+
+                }
+
+            },
+
+            x: {
+
+                title: {
+
+                    display: true,
+
+                    text: "Assessment Date"
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+
+
+// =========================================
+// VIEW ASSESSMENT
+// =========================================
+
+function viewAssessment(
+    date,
+    location,
+    hazard,
+    flood,
+    landslide,
+    overall
+) {
+
+
+    let riskStatus = "Low";
+
+    let badgeClass = "bg-success";
+
+
+    if (overall >= 81) {
+
+        riskStatus = "Critical";
+
+        badgeClass = "bg-dark";
+
+    }
+
+    else if (overall >= 61) {
+
+        riskStatus = "High";
+
+        badgeClass = "bg-danger";
+
+    }
+
+    else if (overall >= 31) {
+
+        riskStatus = "Moderate";
+
+        badgeClass = "bg-warning text-dark";
+
+    }
+
+
+    document.getElementById(
+        "assessmentDetails"
+    ).innerHTML = `
+
+        <div class="mb-3">
+
+            <small class="text-secondary">
+                Assessment Date
+            </small>
+
+            <h6 class="fw-bold">
+                ${date}
+            </h6>
+
+        </div>
+
+
+        <div class="mb-3">
+
+            <small class="text-secondary">
+                Location
+            </small>
+
+            <h6 class="fw-bold">
+                ${location}
+            </h6>
+
+        </div>
+
+
+        <div class="mb-3">
+
+            <small class="text-secondary">
+                Primary Hazard
+            </small>
+
+            <h6 class="fw-bold">
+                ${hazard}
+            </h6>
+
+        </div>
+
+
+        <div class="row g-3 mb-3">
+
+
+            <div class="col-4">
+
+                <div class="border rounded p-3 text-center">
+
+                    <small class="text-secondary d-block">
+                        Flood
+                    </small>
+
+                    <strong class="fs-5">
+                        ${flood}%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-4">
+
+                <div class="border rounded p-3 text-center">
+
+                    <small class="text-secondary d-block">
+                        Landslide
+                    </small>
+
+                    <strong class="fs-5">
+                        ${landslide}%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-4">
+
+                <div class="border rounded p-3 text-center">
+
+                    <small class="text-secondary d-block">
+                        Overall
+                    </small>
+
+                    <strong class="fs-5">
+                        ${overall}%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="alert alert-light mb-0">
+
+            <strong>Risk Status:</strong>
+
+            <span class="badge ${badgeClass} rounded-pill ms-2">
+                ${riskStatus}
+            </span>
+
+        </div>
+
+    `;
+
+
+    const modal =
+        new bootstrap.Modal(
+            document.getElementById("assessmentModal")
+        );
+
+
+    modal.show();
+
+}
+
+
+
+// =========================================
+// FILTER FUNCTION
+// =========================================
+
+function filterTable() {
+
+
+    const location =
+        document.getElementById(
+            "locationFilter"
+        ).value.toLowerCase();
+
+
+    const hazard =
+        document.getElementById(
+            "hazardFilter"
+        ).value.toLowerCase();
+
+
+    const risk =
+        document.getElementById(
+            "riskFilter"
+        ).value.toLowerCase();
+
+
+    const rows =
+        document.querySelectorAll(
+            "#historyTableBody tr"
+        );
+
+
+    rows.forEach(function(row) {
+
+
+        const rowText =
+            row.textContent.toLowerCase();
+
+
+        const locationMatch =
+            !location ||
+            rowText.includes(location);
+
+
+        const hazardMatch =
+            !hazard ||
+            rowText.includes(hazard);
+
+
+        const riskMatch =
+            !risk ||
+            rowText.includes(risk);
+
+
+        if (
+            locationMatch &&
+            hazardMatch &&
+            riskMatch
+        ) {
+
+            row.classList.remove("d-none");
+
+        }
+
+        else {
+
+            row.classList.add("d-none");
+
+        }
+
+    });
+
+}
+
+
+
+// =========================================
+// FILTER EVENTS
+// =========================================
+
+document
+    .getElementById("locationFilter")
+    .addEventListener(
+        "change",
+        filterTable
+    );
+
+
+document
+    .getElementById("hazardFilter")
+    .addEventListener(
+        "change",
+        filterTable
+    );
+
+
+document
+    .getElementById("riskFilter")
+    .addEventListener(
+        "change",
+        filterTable
+    );
+
+
+
+// =========================================
+// REFRESH BUTTON
+// =========================================
+
+document
+    .getElementById("refreshButton")
+    .addEventListener(
+        "click",
+        function() {
+
+            this.innerHTML = `
+
+                <span
+                    class="spinner-border spinner-border-sm me-2">
+                </span>
+
+                Refreshing...
+
+            `;
+
+
+            setTimeout(() => {
+
+                this.innerHTML = `
+
+                    <i class="bi bi-check-circle me-2"></i>
+
+                    Updated
+
+                `;
+
+
+                setTimeout(() => {
+
+                    this.innerHTML = `
+
+                        <i class="bi bi-arrow-clockwise me-2"></i>
+
+                        Refresh
+
+                    `;
+
+                }, 1500);
+
+            }, 1000);
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
