@@ -2,32 +2,56 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>LandSafe Connect - Risk Alerts</title>
 
-    <!-- Bootstrap -->
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
-    <!-- Bootstrap Icons -->
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
-    <!-- Google Font -->
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
+
 </head>
 
+
 <body class="bg-light">
+
 
 <div class="container-fluid p-0">
 
     <div class="row g-0 align-items-stretch">
+
 
         <!-- =====================================================
              SIDEBAR
@@ -37,26 +61,40 @@
 
             <div class="d-flex flex-column min-vh-100">
 
+
                 <!-- LOGO -->
+
                 <div class="p-4 border-bottom border-secondary">
 
-                    <a href="dashboard.html"
-                       class="text-decoration-none text-white">
+                    <a
+                        href="index.html"
+                        class="text-decoration-none text-white"
+                    >
 
                         <div class="d-flex align-items-center gap-3">
 
                             <div class="bg-success rounded-3 p-2">
+
                                 <i class="bi bi-shield-check fs-3"></i>
+
                             </div>
 
+
                             <div>
+
                                 <div class="fw-bold fs-4">
+
                                     LandSafe
+
                                 </div>
 
+
                                 <div class="text-secondary">
+
                                     Connect
+
                                 </div>
+
                             </div>
 
                         </div>
@@ -67,6 +105,7 @@
 
 
                 <!-- USER PROFILE -->
+
                 <div class="p-4 border-bottom border-secondary">
 
                     <div class="d-flex align-items-center gap-3">
@@ -74,21 +113,27 @@
                         <div
                             class="bg-success-subtle text-success rounded-circle
                                    d-flex align-items-center justify-content-center
-                                   flex-shrink-0"
-                            style="width:55px;height:55px;">
+                                   flex-shrink-0 p-3"
+                        >
 
                             <i class="bi bi-person-fill fs-4"></i>
 
                         </div>
 
+
                         <div>
 
                             <div class="fw-bold fs-5">
+
                                 User
+
                             </div>
 
+
                             <div class="text-secondary">
+
                                 Citizen Account
+
                             </div>
 
                         </div>
@@ -99,92 +144,101 @@
 
 
                 <!-- MAIN MENU -->
+
                 <div class="p-3">
 
                     <div class="text-uppercase text-secondary fw-bold small mb-3">
+
                         Main Menu
+
                     </div>
 
 
-                    <!-- Dashboard -->
-                    <a href="dashboard.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="index.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-grid-fill me-3"></i>
+
                         Dashboard
 
                     </a>
 
 
-                    <!-- Risk Alert ACTIVE -->
-                    <a href="risk-alert.html"
-                       class="btn btn-success text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="risk-alert.html"
+                        class="btn btn-success text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-exclamation-triangle me-3"></i>
+
                         Risk Alert
 
                     </a>
 
 
-                    <!-- Probability -->
-                    <a href="probability-report.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="probability-risk.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-bar-chart-line me-3"></i>
+
                         Probability Report
 
                     </a>
 
 
-                    <!-- Report Issue -->
-                    <a href="report-issue.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="report-issue.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-flag me-3"></i>
+
                         Report an Issue
 
                     </a>
 
 
-                    <!-- Risk Map -->
-                    <a href="risk-map.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="live-risk-map.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-map me-3"></i>
+
                         Live Risk Map
 
                     </a>
 
 
-                    <!-- Safety Guide -->
-                    <a href="safety-guide.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="safety-guide.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-shield-check me-3"></i>
+
                         Safety Guide
 
                     </a>
 
 
-                    <!-- Previous Risk -->
-                    <a href="history.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
-
-                        <i class="bi bi-clock-history me-3"></i>
-                        Previous Risk Data
-
-                    </a>
-
-
-                    <!-- Alerts -->
-                    <a href="alerts.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="sirens-alerts.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-bell me-3"></i>
+
                         Sirens & Alerts
 
                         <span class="badge bg-danger rounded-pill float-end">
+
                             3
+
                         </span>
 
                     </a>
@@ -193,26 +247,35 @@
 
 
                 <!-- ACCOUNT -->
+
                 <div class="px-3 pb-3">
 
                     <div class="text-uppercase text-secondary fw-bold small mb-3">
+
                         Account
+
                     </div>
 
 
-                    <a href="profile.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="profile.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-person-circle me-3"></i>
+
                         Profile
 
                     </a>
 
 
-                    <a href="home.html"
-                       class="btn text-white text-start w-100 mb-1 py-2">
+                    <a
+                        href="home.html"
+                        class="btn text-white text-start w-100 mb-1 py-2"
+                    >
 
                         <i class="bi bi-house me-3"></i>
+
                         Home
 
                     </a>
@@ -221,7 +284,9 @@
 
 
                 <!-- BOTTOM AREA -->
+
                 <div class="mt-auto p-3 border-top border-secondary">
+
 
                     <div class="alert alert-warning mb-3 small">
 
@@ -232,8 +297,10 @@
                     </div>
 
 
-                    <a href="login.html"
-                       class="btn btn-outline-light w-100">
+                    <a
+                        href="login.html"
+                        class="btn btn-outline-light w-100"
+                    >
 
                         <i class="bi bi-box-arrow-left me-2"></i>
 
@@ -254,23 +321,29 @@
 
         <main class="col bg-light">
 
+
             <!-- TOP HEADER -->
 
             <header class="bg-white border-bottom">
 
-                <div class="container-fluid px-4 py-4">
+                <div class="container-fluid px-4 py-3">
 
                     <div class="row align-items-center">
 
                         <div class="col">
 
-                            <div class="text-secondary mb-1">
+                            <div class="text-secondary small mb-1">
+
                                 LandSafe Connect
+
                             </div>
 
-                            <h1 class="fw-bold mb-0">
+
+                            <h2 class="fw-bold mb-0">
+
                                 Risk Alerts
-                            </h1>
+
+                            </h2>
 
                         </div>
 
@@ -279,15 +352,21 @@
 
                             <div class="d-flex align-items-center gap-2">
 
-                                <!-- Notification -->
+
                                 <button
-                                    class="btn btn-light position-relative">
+                                    type="button"
+                                    class="btn btn-light position-relative"
+                                    id="notificationButton"
+                                >
 
                                     <i class="bi bi-bell fs-5"></i>
 
+
                                     <span
                                         class="position-absolute top-0 start-100 translate-middle
-                                               badge rounded-pill bg-danger">
+                                               badge rounded-pill bg-danger"
+                                        id="notificationCount"
+                                    >
 
                                         3
 
@@ -296,12 +375,13 @@
                                 </button>
 
 
-                                <!-- Profile -->
                                 <a
                                     href="profile.html"
-                                    class="btn btn-outline-success">
+                                    class="btn btn-outline-success"
+                                >
 
                                     <i class="bi bi-person-circle me-2"></i>
+
                                     Profile
 
                                 </a>
@@ -319,34 +399,80 @@
 
             <!-- PAGE CONTENT -->
 
-            <div class="container-fluid px-4 py-4">
+            <div class="container-fluid px-4 py-3">
+
+
+                <!-- =================================================
+                     DEMO NOTICE
+                ================================================== -->
+
+                <div class="alert alert-info shadow-sm mb-3">
+
+                    <div class="d-flex align-items-start gap-2">
+
+                        <i class="bi bi-info-circle-fill fs-5"></i>
+
+
+                        <div>
+
+                            <strong>
+
+                                Demo Data Notice
+
+                            </strong>
+
+
+                            <div class="small mt-1">
+
+                                The risk scores and environmental factors
+                                shown on this page are sample frontend
+                                values. They will later be connected to
+                                real-time environmental data and the
+                                trained LandSafe ML model.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
                 <!-- =================================================
                      HIGH RISK ALERT
                 ================================================== -->
 
-                <div class="alert alert-warning shadow-sm mb-4">
+                <div
+                    class="alert alert-warning shadow-sm mb-3"
+                    id="mainRiskAlert"
+                >
 
-                    <div class="row align-items-center">
+                    <div class="row align-items-center g-3">
+
 
                         <div class="col-auto">
 
-                            <i class="bi bi-exclamation-triangle-fill display-5"></i>
+                            <i class="bi bi-exclamation-triangle-fill fs-2"></i>
 
                         </div>
 
 
                         <div class="col">
 
-                            <h2 class="fw-bold mb-2">
-                                Elevated Disaster Risk
-                            </h2>
+                            <h4 class="fw-bold mb-1">
 
-                            <p class="fs-5 mb-0">
-                                Your selected region currently has an elevated
-                                disaster-risk level. Check the latest risk
-                                report and follow official safety instructions.
+                                Elevated Disaster Risk
+
+                            </h4>
+
+
+                            <p class="mb-0">
+
+                                Guwahati, Assam currently has an elevated
+                                demo risk level. Monitor official warnings
+                                and follow recommended safety instructions.
+
                             </p>
 
                         </div>
@@ -354,8 +480,10 @@
 
                         <div class="col-auto">
 
-                            <span class="badge bg-warning text-dark fs-5 px-3 py-2">
+                            <span class="badge bg-warning text-dark px-3 py-2">
+
                                 HIGH RISK
+
                             </span>
 
                         </div>
@@ -365,43 +493,66 @@
                 </div>
 
 
-
                 <!-- =================================================
                      RISK SUMMARY
                 ================================================== -->
 
-                <div class="row g-4 mb-4">
+                <div class="row g-3 mb-3">
 
 
-                    <!-- Overall -->
+                    <!-- OVERALL -->
+
                     <div class="col-12 col-md-4">
 
                         <div class="card border-0 shadow-sm h-100">
 
-                            <div class="card-body p-4">
+                            <div class="card-body p-3">
 
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start">
 
                                     <div>
 
-                                        <p class="text-secondary fs-5 mb-2">
+                                        <p class="text-secondary mb-1">
+
                                             Overall Risk
+
                                         </p>
 
-                                        <div class="display-3 fw-bold text-warning">
+
+                                        <div
+                                            id="overallRisk"
+                                            class="display-6 fw-bold text-warning"
+                                        >
+
                                             72
+
                                         </div>
 
-                                        <span class="badge bg-warning text-dark mt-2">
+
+                                        <span
+                                            id="overallRiskStatus"
+                                            class="badge bg-warning text-dark mt-1"
+                                        >
+
                                             HIGH
+
                                         </span>
 
                                     </div>
 
-                                    <i
-                                        class="bi bi-shield-exclamation
-                                               text-warning display-5">
-                                    </i>
+
+                                    <div class="bg-warning-subtle text-warning rounded-circle p-2">
+
+                                        <i class="bi bi-shield-exclamation fs-4"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="small text-secondary mt-3">
+
+                                    Demo risk score out of 100
 
                                 </div>
 
@@ -412,42 +563,64 @@
                     </div>
 
 
-                    <!-- Flood -->
+                    <!-- FLOOD -->
+
                     <div class="col-12 col-md-4">
 
                         <div class="card border-0 shadow-sm h-100">
 
-                            <div class="card-body p-4">
+                            <div class="card-body p-3">
 
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start">
 
                                     <div>
 
-                                        <p class="text-secondary fs-5 mb-2">
+                                        <p class="text-secondary mb-1">
+
                                             Flood Risk
+
                                         </p>
 
-                                        <div class="display-3 fw-bold text-primary">
+
+                                        <div
+                                            id="floodRisk"
+                                            class="display-6 fw-bold text-primary"
+                                        >
+
                                             76%
+
                                         </div>
 
                                     </div>
 
-                                    <i
-                                        class="bi bi-water
-                                               text-primary display-5">
-                                    </i>
+
+                                    <div class="bg-primary-subtle text-primary rounded-circle p-2">
+
+                                        <i class="bi bi-water fs-4"></i>
+
+                                    </div>
 
                                 </div>
 
 
-                                <div class="progress mt-4"
-                                     style="height:10px;">
+                                <div class="progress mt-3">
 
                                     <div
+                                        id="floodProgress"
                                         class="progress-bar bg-primary"
-                                        style="width:76%;">
-                                    </div>
+                                        role="progressbar"
+                                        aria-label="Flood risk"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-valuenow="76"
+                                    ></div>
+
+                                </div>
+
+
+                                <div class="small text-secondary mt-2">
+
+                                    Demo probability
 
                                 </div>
 
@@ -458,42 +631,64 @@
                     </div>
 
 
-                    <!-- Landslide -->
+                    <!-- LANDSLIDE -->
+
                     <div class="col-12 col-md-4">
 
                         <div class="card border-0 shadow-sm h-100">
 
-                            <div class="card-body p-4">
+                            <div class="card-body p-3">
 
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start">
 
                                     <div>
 
-                                        <p class="text-secondary fs-5 mb-2">
+                                        <p class="text-secondary mb-1">
+
                                             Landslide Risk
+
                                         </p>
 
-                                        <div class="display-3 fw-bold text-danger">
+
+                                        <div
+                                            id="landslideRisk"
+                                            class="display-6 fw-bold text-danger"
+                                        >
+
                                             68%
+
                                         </div>
 
                                     </div>
 
-                                    <i
-                                        class="bi bi-layers
-                                               text-danger display-5">
-                                    </i>
+
+                                    <div class="bg-danger-subtle text-danger rounded-circle p-2">
+
+                                        <i class="bi bi-layers fs-4"></i>
+
+                                    </div>
 
                                 </div>
 
 
-                                <div class="progress mt-4"
-                                     style="height:10px;">
+                                <div class="progress mt-3">
 
                                     <div
+                                        id="landslideProgress"
                                         class="progress-bar bg-danger"
-                                        style="width:68%;">
-                                    </div>
+                                        role="progressbar"
+                                        aria-label="Landslide risk"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-valuenow="68"
+                                    ></div>
+
+                                </div>
+
+
+                                <div class="small text-secondary mt-2">
+
+                                    Demo probability
 
                                 </div>
 
@@ -506,12 +701,11 @@
                 </div>
 
 
-
                 <!-- =================================================
                      LOCATION + ASSESSMENT
                 ================================================== -->
 
-                <div class="row g-4 mb-4">
+                <div class="row g-3 mb-3">
 
 
                     <!-- LOCATION -->
@@ -520,29 +714,54 @@
 
                         <div class="card border-0 shadow-sm h-100">
 
-                            <div class="card-body p-4">
-
-                                <h2 class="fw-bold mb-4">
-
-                                    <i class="bi bi-geo-alt text-success me-2"></i>
-
-                                    Selected Location
-
-                                </h2>
+                            <div class="card-body p-3">
 
 
-                                <div class="border rounded-3 p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
 
-                                    <div class="row g-3">
+                                    <h4 class="fw-bold mb-0">
+
+                                        <i class="bi bi-geo-alt text-success me-2"></i>
+
+                                        Selected Location
+
+                                    </h4>
+
+
+                                    <span class="badge text-bg-light">
+
+                                        Demo
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="border rounded-3 p-3">
+
+
+                                    <div class="row g-2">
+
 
                                         <div class="col-12">
 
-                                            <label class="form-label text-secondary">
+                                            <label
+                                                class="form-label text-secondary mb-1"
+                                                for="locationName"
+                                            >
+
                                                 Location
+
                                             </label>
 
-                                            <div class="form-control bg-light">
+
+                                            <div
+                                                id="locationName"
+                                                class="form-control bg-light"
+                                            >
+
                                                 Guwahati, Assam
+
                                             </div>
 
                                         </div>
@@ -550,12 +769,22 @@
 
                                         <div class="col-6">
 
-                                            <label class="form-label text-secondary">
+                                            <label
+                                                class="form-label text-secondary mb-1"
+                                            >
+
                                                 Latitude
+
                                             </label>
 
-                                            <div class="form-control bg-light">
+
+                                            <div
+                                                id="latitude"
+                                                class="form-control bg-light"
+                                            >
+
                                                 26.1445
+
                                             </div>
 
                                         </div>
@@ -563,17 +792,44 @@
 
                                         <div class="col-6">
 
-                                            <label class="form-label text-secondary">
+                                            <label
+                                                class="form-label text-secondary mb-1"
+                                            >
+
                                                 Longitude
+
                                             </label>
 
-                                            <div class="form-control bg-light">
+
+                                            <div
+                                                id="longitude"
+                                                class="form-control bg-light"
+                                            >
+
                                                 91.7362
+
                                             </div>
 
                                         </div>
+
 
                                     </div>
+
+                                </div>
+
+
+                                <div class="d-grid mt-3">
+
+                                    <a
+                                        href="live-risk-map.html"
+                                        class="btn btn-outline-success"
+                                    >
+
+                                        <i class="bi bi-map me-2"></i>
+
+                                        View on Live Risk Map
+
+                                    </a>
 
                                 </div>
 
@@ -590,40 +846,66 @@
 
                         <div class="card border-0 shadow-sm h-100">
 
-                            <div class="card-body p-4">
+                            <div class="card-body p-3">
 
-                                <h2 class="fw-bold mb-4">
 
-                                    <i class="bi bi-activity text-success me-2"></i>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
 
-                                    Risk Assessment
+                                    <h4 class="fw-bold mb-0">
 
-                                </h2>
+                                        <i class="bi bi-activity text-success me-2"></i>
+
+                                        Risk Assessment
+
+                                    </h4>
+
+
+                                    <span class="badge text-bg-warning">
+
+                                        Demo
+
+                                    </span>
+
+                                </div>
 
 
                                 <!-- Rainfall -->
 
-                                <div class="mb-4">
+                                <div class="mb-3">
 
-                                    <div class="d-flex justify-content-between mb-2">
 
-                                        <span class="fs-5">
+                                    <div class="d-flex justify-content-between mb-1">
+
+                                        <span>
+
                                             Rainfall Impact
+
                                         </span>
 
-                                        <strong class="text-danger">
+
+                                        <strong
+                                            id="rainfallStatus"
+                                            class="text-danger"
+                                        >
+
                                             High
+
                                         </strong>
 
                                     </div>
 
-                                    <div class="progress"
-                                         style="height:8px;">
+
+                                    <div class="progress">
 
                                         <div
+                                            id="rainfallProgress"
                                             class="progress-bar bg-danger"
-                                            style="width:82%;">
-                                        </div>
+                                            role="progressbar"
+                                            aria-label="Rainfall impact"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="82"
+                                        ></div>
 
                                     </div>
 
@@ -632,27 +914,41 @@
 
                                 <!-- Terrain -->
 
-                                <div class="mb-4">
+                                <div class="mb-3">
 
-                                    <div class="d-flex justify-content-between mb-2">
 
-                                        <span class="fs-5">
+                                    <div class="d-flex justify-content-between mb-1">
+
+                                        <span>
+
                                             Terrain Conditions
+
                                         </span>
 
-                                        <strong class="text-warning">
+
+                                        <strong
+                                            id="terrainStatus"
+                                            class="text-warning"
+                                        >
+
                                             Moderate
+
                                         </strong>
 
                                     </div>
 
-                                    <div class="progress"
-                                         style="height:8px;">
+
+                                    <div class="progress">
 
                                         <div
+                                            id="terrainProgress"
                                             class="progress-bar bg-warning"
-                                            style="width:64%;">
-                                        </div>
+                                            role="progressbar"
+                                            aria-label="Terrain conditions"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="64"
+                                        ></div>
 
                                     </div>
 
@@ -663,25 +959,39 @@
 
                                 <div>
 
-                                    <div class="d-flex justify-content-between mb-2">
 
-                                        <span class="fs-5">
+                                    <div class="d-flex justify-content-between mb-1">
+
+                                        <span>
+
                                             Water Accumulation
+
                                         </span>
 
-                                        <strong class="text-danger">
+
+                                        <strong
+                                            id="waterStatus"
+                                            class="text-danger"
+                                        >
+
                                             High
+
                                         </strong>
 
                                     </div>
 
-                                    <div class="progress"
-                                         style="height:8px;">
+
+                                    <div class="progress">
 
                                         <div
+                                            id="waterProgress"
                                             class="progress-bar bg-danger"
-                                            style="width:76%;">
-                                        </div>
+                                            role="progressbar"
+                                            aria-label="Water accumulation"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="76"
+                                        ></div>
 
                                     </div>
 
@@ -694,152 +1004,235 @@
                     </div>
 
                 </div>
-
 
 
                 <!-- =================================================
                      WHY RISK IS HIGH
                 ================================================== -->
 
-                <div class="card border-0 shadow-sm mb-4">
-
-                    <div class="card-body p-4">
-
-                        <h2 class="fw-bold">
-                            Why is the risk high?
-                        </h2>
-
-                        <p class="text-secondary fs-5 mb-4">
-                            Important factors contributing to the current
-                            risk assessment.
-                        </p>
+                <div class="card border-0 shadow-sm mb-3">
 
 
-                        <div class="row g-4">
+                    <div class="card-body p-3">
 
 
-                            <!-- Heavy Rainfall -->
+                        <div class="mb-3">
+
+                            <h4 class="fw-bold mb-1">
+
+                                Why is the risk high?
+
+                            </h4>
+
+
+                            <p class="text-secondary mb-0">
+
+                                Key environmental factors contributing
+                                to the current demo risk assessment.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="row g-3">
+
+
+                            <!-- RAINFALL -->
 
                             <div class="col-12 col-md-4">
 
-                                <div class="border rounded-4 p-4 h-100">
+                                <div class="border rounded-4 p-3 h-100">
 
-                                    <i
-                                        class="bi bi-cloud-rain
-                                               text-primary display-5">
-                                    </i>
 
-                                    <h4 class="fw-bold mt-3">
-                                        Heavy Rainfall
-                                    </h4>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
 
-                                    <p class="text-secondary fs-5 mb-0">
-                                        Recent rainfall conditions may increase
-                                        flood and landslide risk.
+                                        <div class="bg-primary-subtle text-primary rounded-circle p-2">
+
+                                            <i class="bi bi-cloud-rain fs-5"></i>
+
+                                        </div>
+
+
+                                        <h5 class="fw-bold mb-0">
+
+                                            Heavy Rainfall
+
+                                        </h5>
+
+                                    </div>
+
+
+                                    <p class="text-secondary mb-2">
+
+                                        Recent rainfall conditions may
+                                        increase flood and landslide risk.
+
                                     </p>
+
+
+                                    <span class="badge text-bg-primary">
+
+                                        Impact: High
+
+                                    </span>
 
                                 </div>
 
                             </div>
 
 
-                            <!-- Terrain -->
+                            <!-- TERRAIN -->
 
                             <div class="col-12 col-md-4">
 
-                                <div class="border rounded-4 p-4 h-100">
+                                <div class="border rounded-4 p-3 h-100">
 
-                                    <i
-                                        class="bi bi-layers
-                                               text-danger display-5">
-                                    </i>
 
-                                    <h4 class="fw-bold mt-3">
-                                        Terrain Conditions
-                                    </h4>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
 
-                                    <p class="text-secondary fs-5 mb-0">
-                                        Steep or unstable terrain can increase
-                                        landslide susceptibility.
+                                        <div class="bg-danger-subtle text-danger rounded-circle p-2">
+
+                                            <i class="bi bi-layers fs-5"></i>
+
+                                        </div>
+
+
+                                        <h5 class="fw-bold mb-0">
+
+                                            Terrain Conditions
+
+                                        </h5>
+
+                                    </div>
+
+
+                                    <p class="text-secondary mb-2">
+
+                                        Steep or unstable terrain can
+                                        increase landslide susceptibility.
+
                                     </p>
+
+
+                                    <span class="badge text-bg-warning">
+
+                                        Impact: Moderate
+
+                                    </span>
 
                                 </div>
 
                             </div>
 
 
-                            <!-- Water -->
+                            <!-- WATER -->
 
                             <div class="col-12 col-md-4">
 
-                                <div class="border rounded-4 p-4 h-100">
+                                <div class="border rounded-4 p-3 h-100">
 
-                                    <i
-                                        class="bi bi-water
-                                               text-info display-5">
-                                    </i>
 
-                                    <h4 class="fw-bold mt-3">
-                                        Water Accumulation
-                                    </h4>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
 
-                                    <p class="text-secondary fs-5 mb-0">
-                                        Increased water accumulation can
+                                        <div class="bg-info-subtle text-info rounded-circle p-2">
+
+                                            <i class="bi bi-water fs-5"></i>
+
+                                        </div>
+
+
+                                        <h5 class="fw-bold mb-0">
+
+                                            Water Accumulation
+
+                                        </h5>
+
+                                    </div>
+
+
+                                    <p class="text-secondary mb-2">
+
+                                        Increased water accumulation may
                                         contribute to flood risk.
+
                                     </p>
+
+
+                                    <span class="badge text-bg-danger">
+
+                                        Impact: High
+
+                                    </span>
 
                                 </div>
 
                             </div>
+
 
                         </div>
 
                     </div>
 
                 </div>
-
 
 
                 <!-- =================================================
                      SAFETY RECOMMENDATIONS
                 ================================================== -->
 
-                <div class="card border-0 shadow-sm mb-4">
+                <div class="card border-0 shadow-sm mb-3">
 
-                    <div class="card-body p-4">
 
-                        <h2 class="fw-bold mb-2">
+                    <div class="card-body p-3">
+
+
+                        <h4 class="fw-bold mb-1">
+
                             Safety Recommendations
-                        </h2>
 
-                        <p class="text-secondary fs-5 mb-4">
-                            Follow these precautions during elevated
+                        </h4>
+
+
+                        <p class="text-secondary mb-3">
+
+                            Recommended precautions for elevated
                             disaster-risk conditions.
+
                         </p>
 
 
-                        <!-- Recommendation 1 -->
+                        <!-- 1 -->
 
-                        <div class="d-flex align-items-center gap-4
-                                    border-bottom py-4">
+                        <div class="d-flex align-items-center gap-3 border-bottom py-3">
+
 
                             <span
                                 class="badge rounded-circle bg-success
-                                       fs-5 flex-shrink-0 p-3">
+                                       d-inline-flex align-items-center
+                                       justify-content-center flex-shrink-0
+                                       p-2 fs-6 lh-1"
+                            >
 
                                 1
 
                             </span>
 
+
                             <div>
 
-                                <h4 class="fw-bold mb-2">
-                                    Stay informed
-                                </h4>
+                                <h6 class="fw-bold mb-1">
 
-                                <p class="text-secondary fs-5 mb-0">
-                                    Monitor official disaster management
+                                    Stay informed
+
+                                </h6>
+
+
+                                <p class="text-secondary mb-0 small">
+
+                                    Monitor official disaster-management
                                     warnings and local alerts.
+
                                 </p>
 
                             </div>
@@ -847,28 +1240,37 @@
                         </div>
 
 
-                        <!-- Recommendation 2 -->
+                        <!-- 2 -->
 
-                        <div class="d-flex align-items-center gap-4
-                                    border-bottom py-4">
+                        <div class="d-flex align-items-center gap-3 border-bottom py-3">
+
 
                             <span
                                 class="badge rounded-circle bg-success
-                                       fs-5 flex-shrink-0 p-3">
+                                       d-inline-flex align-items-center
+                                       justify-content-center flex-shrink-0
+                                       p-2 fs-6 lh-1"
+                            >
 
                                 2
 
                             </span>
 
+
                             <div>
 
-                                <h4 class="fw-bold mb-2">
-                                    Prepare emergency supplies
-                                </h4>
+                                <h6 class="fw-bold mb-1">
 
-                                <p class="text-secondary fs-5 mb-0">
-                                    Keep water, medicines, flashlight and
-                                    important documents ready.
+                                    Prepare emergency supplies
+
+                                </h6>
+
+
+                                <p class="text-secondary mb-0 small">
+
+                                    Keep water, medicines, flashlight
+                                    and important documents ready.
+
                                 </p>
 
                             </div>
@@ -876,28 +1278,37 @@
                         </div>
 
 
-                        <!-- Recommendation 3 -->
+                        <!-- 3 -->
 
-                        <div class="d-flex align-items-center gap-4
-                                    border-bottom py-4">
+                        <div class="d-flex align-items-center gap-3 border-bottom py-3">
+
 
                             <span
                                 class="badge rounded-circle bg-success
-                                       fs-5 flex-shrink-0 p-3">
+                                       d-inline-flex align-items-center
+                                       justify-content-center flex-shrink-0
+                                       p-2 fs-6 lh-1"
+                            >
 
                                 3
 
                             </span>
 
+
                             <div>
 
-                                <h4 class="fw-bold mb-2">
-                                    Avoid dangerous areas
-                                </h4>
+                                <h6 class="fw-bold mb-1">
 
-                                <p class="text-secondary fs-5 mb-0">
-                                    Avoid flooded roads, unstable slopes and
-                                    river-side areas.
+                                    Avoid dangerous areas
+
+                                </h6>
+
+
+                                <p class="text-secondary mb-0 small">
+
+                                    Avoid flooded roads, unstable slopes
+                                    and river-side areas.
+
                                 </p>
 
                             </div>
@@ -905,27 +1316,38 @@
                         </div>
 
 
-                        <!-- Recommendation 4 -->
+                        <!-- 4 -->
 
-                        <div class="d-flex align-items-center gap-4 py-4">
+                        <div class="d-flex align-items-center gap-3 py-3">
+
 
                             <span
                                 class="badge rounded-circle bg-success
-                                       fs-5 flex-shrink-0 p-3">
+                                       d-inline-flex align-items-center
+                                       justify-content-center flex-shrink-0
+                                       p-2 fs-6 lh-1"
+                            >
 
                                 4
 
                             </span>
 
+
                             <div>
 
-                                <h4 class="fw-bold mb-2">
-                                    Follow official warnings
-                                </h4>
+                                <h6 class="fw-bold mb-1">
 
-                                <p class="text-secondary fs-5 mb-0">
-                                    Follow instructions from local authorities
-                                    and disaster-management agencies.
+                                    Follow official warnings
+
+                                </h6>
+
+
+                                <p class="text-secondary mb-0 small">
+
+                                    Follow instructions from local
+                                    authorities and disaster-management
+                                    agencies.
+
                                 </p>
 
                             </div>
@@ -937,28 +1359,32 @@
                 </div>
 
 
-
                 <!-- =================================================
                      TAKE ACTION
                 ================================================== -->
 
-                <div class="card border-0 shadow-sm mb-4">
+                <div class="card border-0 shadow-sm mb-3">
 
-                    <div class="card-body p-4">
 
-                        <h2 class="fw-bold mb-4">
+                    <div class="card-body p-3">
+
+
+                        <h4 class="fw-bold mb-3">
+
                             Take Action
-                        </h2>
+
+                        </h4>
 
 
-                        <div class="row g-3">
+                        <div class="row g-2">
 
 
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-6 col-lg-3">
 
                                 <a
                                     href="analyze.html"
-                                    class="btn btn-success btn-lg w-100 py-3">
+                                    class="btn btn-success w-100 py-2"
+                                >
 
                                     <i class="bi bi-activity me-2"></i>
 
@@ -969,11 +1395,12 @@
                             </div>
 
 
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-6 col-lg-3">
 
                                 <a
-                                    href="risk-map.html"
-                                    class="btn btn-outline-success btn-lg w-100 py-3">
+                                    href="live-risk-map.html"
+                                    class="btn btn-outline-success w-100 py-2"
+                                >
 
                                     <i class="bi bi-map me-2"></i>
 
@@ -984,15 +1411,32 @@
                             </div>
 
 
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-6 col-lg-3">
 
                                 <a
                                     href="safety-guide.html"
-                                    class="btn btn-outline-dark btn-lg w-100 py-3">
+                                    class="btn btn-outline-dark w-100 py-2"
+                                >
 
                                     <i class="bi bi-shield-check me-2"></i>
 
                                     Safety Guide
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="col-12 col-md-6 col-lg-3">
+
+                                <a
+                                    href="report-issue.html"
+                                    class="btn btn-outline-danger w-100 py-2"
+                                >
+
+                                    <i class="bi bi-life-preserver me-2"></i>
+
+                                    Request Rescue
 
                                 </a>
 
@@ -1005,37 +1449,46 @@
                 </div>
 
 
-
                 <!-- =================================================
                      EMERGENCY
                 ================================================== -->
 
-                <div class="card border-0 shadow-sm bg-danger text-white mb-4">
+                <div class="card border-0 shadow-sm bg-danger text-white mb-3">
 
-                    <div class="card-body p-4">
 
-                        <div class="row align-items-center">
+                    <div class="card-body p-3">
+
+
+                        <div class="row align-items-center g-3">
+
 
                             <div class="col">
 
-                                <h2 class="fw-bold">
-                                    <i class="bi bi-telephone-fill me-2"></i>
-                                    Emergency Assistance
-                                </h2>
+                                <h4 class="fw-bold mb-1">
 
-                                <p class="fs-5 mb-0">
+                                    <i class="bi bi-telephone-fill me-2"></i>
+
+                                    Emergency Assistance
+
+                                </h4>
+
+
+                                <p class="mb-0">
+
                                     If you are in immediate danger,
                                     contact emergency services.
+
                                 </p>
 
                             </div>
 
 
-                            <div class="col-auto">
+                            <div class="col-12 col-sm-auto">
 
                                 <a
                                     href="tel:112"
-                                    class="btn btn-light btn-lg text-danger fw-bold">
+                                    class="btn btn-light text-danger fw-bold"
+                                >
 
                                     <i class="bi bi-telephone-fill me-2"></i>
 
@@ -1052,37 +1505,87 @@
                 </div>
 
 
-
                 <!-- =================================================
-                     DEMO DATA
+                     LAST UPDATED
                 ================================================== -->
 
-                <div class="alert alert-info mb-4">
+                <div class="card border-0 shadow-sm mb-3">
 
-                    <i class="bi bi-info-circle me-2"></i>
 
-                    <strong>Demo Data:</strong>
+                    <div class="card-body p-3">
 
-                    The risk values currently shown are sample frontend
-                    values. They will later be connected to real environmental
-                    data and the trained LandSafe ML model.
+
+                        <div class="d-flex flex-column flex-md-row
+                                    justify-content-between gap-2">
+
+
+                            <div>
+
+                                <h6 class="fw-bold mb-1">
+
+                                    Risk Assessment Status
+
+                                </h6>
+
+
+                                <div class="small text-secondary">
+
+                                    <i class="bi bi-clock me-1"></i>
+
+                                    Last checked:
+
+                                    <span id="lastUpdated">
+
+                                        Demo session
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="small text-secondary">
+
+                                <i class="bi bi-cpu me-1"></i>
+
+                                ML model:
+
+                                <span class="fw-semibold">
+
+                                    Not connected
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
+                <!-- =================================================
+                     DISCLAIMER
+                ================================================== -->
 
-                <!-- DISCLAIMER -->
-
-                <div class="alert alert-warning">
+                <div class="alert alert-warning small mb-3">
 
                     <i class="bi bi-shield-exclamation me-2"></i>
 
-                    <strong>Important:</strong>
 
-                    LandSafe Connect provides AI-based risk assessment and
-                    emergency information for decision support. It does not
-                    replace official disaster-management warnings or emergency
-                    services.
+                    <strong>
+
+                        Important:
+
+                    </strong>
+
+
+                    LandSafe Connect provides AI-based risk assessment
+                    and emergency information for decision support.
+                    It does not replace official disaster-management
+                    warnings or emergency services.
 
                 </div>
 
@@ -1096,11 +1599,21 @@
 </div>
 
 
-<!-- Bootstrap JS -->
+<!-- =========================================================
+     BOOTSTRAP JS LIBRARY
+========================================================== -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+
+<!-- =========================================================
+     LANDSAFE RISK ALERT JAVASCRIPT
+========================================================== -->
+
+<script src="risk-alert.js"></script>
+
 
 </body>
 

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monitor Locations | LandSafe Connect</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+</head>
+
+<body class="bg-light">
+
+<div class="container-fluid">
+    <div class="row min-vh-100">
+
+        <!-- ============================= -->
+        <!-- ADMIN SIDEBAR -->
+        <!-- ============================= -->
+
+        <aside class="col-12 col-lg-3 col-xl-2 bg-dark text-white p-3">
+
+            <div class="mb-4">
+                <h4 class="fw-bold mb-1">
+                    <i class="bi bi-shield-check me-2"></i>
+                    LandSafe
+                </h4>
+
+                <small class="text-white-50">
+                    Admin Control Center
+                </small>
+            </div>
+
+            <hr>
+
+            <nav class="nav flex-column gap-1">
+
+                <a
+                    href="admin.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-grid-1x2-fill me-2"></i>
+                    Dashboard
+                </a>
+
+                <a
+                    href="analyze-reports.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-file-earmark-bar-graph me-2"></i>
+                    Analyse Reports
+                </a>
+
+                <a
+                    href="monitor-locations.html"
+                    class="nav-link active bg-success text-white rounded"
+                >
+                    <i class="bi bi-geo-alt-fill me-2"></i>
+                    Monitor Locations
+                </a>
+
+                <a
+                    href="admin-alerts.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    Alerts
+                </a>
+
+                <a
+                    href="admin-live-map.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-map-fill me-2"></i>
+                    Live Risk Map
+                </a>
+
+                <a
+                    href="user-reports.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-people-fill me-2"></i>
+                    User Reports
+                </a>
+
+                <a
+                    href="emergency-requests.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-life-preserver me-2"></i>
+                    Emergency Requests
+                </a>
+
+                <a
+                    href="safety-management.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-heart-pulse-fill me-2"></i>
+                    Safety Management
+                </a>
+
+                <a
+                    href="risk-analytics.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-bar-chart-fill me-2"></i>
+                    Risk Analytics
+                </a>
+
+              
+
+                <a
+                    href="system-settings.html"
+                    class="nav-link text-white rounded"
+                >
+                    <i class="bi bi-gear-fill me-2"></i>
+                    System Settings
+                </a>
+
+            </nav>
+
+            <hr class="mt-4">
+
+            <a
+                href="login.html"
+                class="btn btn-outline-light w-100"
+            >
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+            </a>
+
+        </aside>
+
+
+        <!-- ============================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================= -->
+
+        <main class="col-12 col-lg-9 col-xl-10 p-3 p-md-4">
+
+            <!-- Header -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                <div>
+                    <h2 class="fw-bold mb-1">
+                        Monitor Locations
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Monitor environmental risk levels across North-Eastern India.
+                    </p>
+                </div>
+
+                <span class="badge text-bg-warning">
+                    <i class="bi bi-database me-1"></i>
+                    Demo Data
+                </span>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- DEMO NOTICE -->
+            <!-- ============================= -->
+
+            <div class="alert alert-info d-flex align-items-start gap-2">
+
+                <i class="bi bi-info-circle-fill fs-5"></i>
+
+                <div>
+                    <strong>Demo monitoring data</strong>
+                    <p class="mb-0 small">
+                        The location values shown below are sample values.
+                        They will be replaced by real environmental data and
+                        AI/ML model results after backend integration.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SUMMARY CARDS -->
+            <!-- ============================= -->
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-6 col-xl-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="text-secondary mb-1">
+                                        Locations Monitored
+                                    </p>
+
+                                    <h3
+                                        class="fw-bold mb-0"
+                                        id="totalLocations"
+                                    >
+                                        8
+                                    </h3>
+                                </div>
+
+                                <i class="bi bi-geo-alt-fill fs-3 text-primary"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="text-secondary mb-1">
+                                        High Risk
+                                    </p>
+
+                                    <h3
+                                        class="fw-bold mb-0 text-danger"
+                                        id="highRiskLocations"
+                                    >
+                                        3
+                                    </h3>
+                                </div>
+
+                                <i class="bi bi-exclamation-triangle-fill fs-3 text-danger"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="text-secondary mb-1">
+                                        Moderate Risk
+                                    </p>
+
+                                    <h3
+                                        class="fw-bold mb-0 text-warning"
+                                        id="moderateRiskLocations"
+                                    >
+                                        3
+                                    </h3>
+                                </div>
+
+                                <i class="bi bi-dash-circle-fill fs-3 text-warning"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="text-secondary mb-1">
+                                        Low Risk
+                                    </p>
+
+                                    <h3
+                                        class="fw-bold mb-0 text-success"
+                                        id="lowRiskLocations"
+                                    >
+                                        2
+                                    </h3>
+                                </div>
+
+                                <i class="bi bi-check-circle-fill fs-3 text-success"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- FILTERS -->
+            <!-- ============================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <div class="row g-3 align-items-end">
+
+                        <div class="col-12 col-md-5">
+
+                            <label
+                                for="locationSearch"
+                                class="form-label fw-semibold"
+                            >
+                                Search Location
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="locationSearch"
+                                    class="form-control"
+                                    placeholder="Search city or state..."
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-3">
+
+                            <label
+                                for="stateFilter"
+                                class="form-label fw-semibold"
+                            >
+                                State
+                            </label>
+
+                            <select
+                                id="stateFilter"
+                                class="form-select"
+                            >
+                                <option value="all">
+                                    All States
+                                </option>
+
+                                <option value="Assam">
+                                    Assam
+                                </option>
+
+                                <option value="Meghalaya">
+                                    Meghalaya
+                                </option>
+
+                                <option value="Mizoram">
+                                    Mizoram
+                                </option>
+
+                                <option value="Sikkim">
+                                    Sikkim
+                                </option>
+
+                                <option value="Nagaland">
+                                    Nagaland
+                                </option>
+
+                                <option value="Manipur">
+                                    Manipur
+                                </option>
+
+                                <option value="Arunachal Pradesh">
+                                    Arunachal Pradesh
+                                </option>
+
+                                <option value="Tripura">
+                                    Tripura
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-3">
+
+                            <label
+                                for="riskFilter"
+                                class="form-label fw-semibold"
+                            >
+                                Risk Level
+                            </label>
+
+                            <select
+                                id="riskFilter"
+                                class="form-select"
+                            >
+                                <option value="all">
+                                    All Risk Levels
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                                <option value="Moderate">
+                                    Moderate
+                                </option>
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-1">
+
+                            <button
+                                type="button"
+                                id="clearFilters"
+                                class="btn btn-outline-secondary w-100"
+                                title="Clear filters"
+                            >
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- LOCATION TABLE -->
+            <!-- ============================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-header bg-white border-0 pt-3">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h5 class="fw-bold mb-1">
+                                Monitored Locations
+                            </h5>
+
+                            <small class="text-secondary">
+                                Environmental risk overview
+                            </small>
+                        </div>
+
+                        <span
+                            class="badge text-bg-secondary"
+                            id="visibleLocationCount"
+                        >
+                            8 locations
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body p-0">
+
+                    <div class="table-responsive">
+
+                        <table class="table table-hover align-middle mb-0">
+
+                            <thead class="table-light">
+
+                                <tr>
+                                    <th>Location</th>
+                                    <th>State</th>
+                                    <th>Risk Type</th>
+                                    <th>Risk Score</th>
+                                    <th>Flood</th>
+                                    <th>Landslide</th>
+                                    <th>Risk Level</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="locationsTable">
+
+                                <!-- Guwahati -->
+
+                                <tr
+                                    data-location="Guwahati"
+                                    data-state="Assam"
+                                    data-risk="High"
+                                >
+
+                                    <td>
+                                        <strong>Guwahati</strong>
+                                    </td>
+
+                                    <td>Assam</td>
+
+                                    <td>
+                                        <span class="badge text-bg-info">
+                                            Flood
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>78/100</strong>
+                                    </td>
+
+                                    <td>76%</td>
+
+                                    <td>54%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-danger">
+                                            High
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Guwahati"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Shillong -->
+
+                                <tr
+                                    data-location="Shillong"
+                                    data-state="Meghalaya"
+                                    data-risk="High"
+                                >
+
+                                    <td>
+                                        <strong>Shillong</strong>
+                                    </td>
+
+                                    <td>Meghalaya</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Landslide
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>72/100</strong>
+                                    </td>
+
+                                    <td>42%</td>
+
+                                    <td>82%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-danger">
+                                            High
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Shillong"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Aizawl -->
+
+                                <tr
+                                    data-location="Aizawl"
+                                    data-state="Mizoram"
+                                    data-risk="High"
+                                >
+
+                                    <td>
+                                        <strong>Aizawl</strong>
+                                    </td>
+
+                                    <td>Mizoram</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Landslide
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>65/100</strong>
+                                    </td>
+
+                                    <td>38%</td>
+
+                                    <td>74%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-danger">
+                                            High
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Aizawl"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Gangtok -->
+
+                                <tr
+                                    data-location="Gangtok"
+                                    data-state="Sikkim"
+                                    data-risk="Moderate"
+                                >
+
+                                    <td>
+                                        <strong>Gangtok</strong>
+                                    </td>
+
+                                    <td>Sikkim</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Landslide
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>55/100</strong>
+                                    </td>
+
+                                    <td>35%</td>
+
+                                    <td>61%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Moderate
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Gangtok"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Agartala -->
+
+                                <tr
+                                    data-location="Agartala"
+                                    data-state="Tripura"
+                                    data-risk="Moderate"
+                                >
+
+                                    <td>
+                                        <strong>Agartala</strong>
+                                    </td>
+
+                                    <td>Tripura</td>
+
+                                    <td>
+                                        <span class="badge text-bg-info">
+                                            Flood
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>48/100</strong>
+                                    </td>
+
+                                    <td>58%</td>
+
+                                    <td>31%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Moderate
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Agartala"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Kohima -->
+
+                                <tr
+                                    data-location="Kohima"
+                                    data-state="Nagaland"
+                                    data-risk="Moderate"
+                                >
+
+                                    <td>
+                                        <strong>Kohima</strong>
+                                    </td>
+
+                                    <td>Nagaland</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Landslide
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>35/100</strong>
+                                    </td>
+
+                                    <td>24%</td>
+
+                                    <td>48%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Moderate
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Kohima"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Itanagar -->
+
+                                <tr
+                                    data-location="Itanagar"
+                                    data-state="Arunachal Pradesh"
+                                    data-risk="Low"
+                                >
+
+                                    <td>
+                                        <strong>Itanagar</strong>
+                                    </td>
+
+                                    <td>Arunachal Pradesh</td>
+
+                                    <td>
+                                        <span class="badge text-bg-warning">
+                                            Landslide
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>28/100</strong>
+                                    </td>
+
+                                    <td>22%</td>
+
+                                    <td>35%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-success">
+                                            Low
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Itanagar"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Imphal -->
+
+                                <tr
+                                    data-location="Imphal"
+                                    data-state="Manipur"
+                                    data-risk="Low"
+                                >
+
+                                    <td>
+                                        <strong>Imphal</strong>
+                                    </td>
+
+                                    <td>Manipur</td>
+
+                                    <td>
+                                        <span class="badge text-bg-info">
+                                            Flood
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <strong>25/100</strong>
+                                    </td>
+
+                                    <td>28%</td>
+
+                                    <td>18%</td>
+
+                                    <td>
+                                        <span class="badge text-bg-success">
+                                            Low
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-primary view-location"
+                                            data-location="Imphal"
+                                        >
+                                            <i class="bi bi-eye me-1"></i>
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- LOCATION DETAILS -->
+            <!-- ============================= -->
+
+            <div
+                class="card border-0 shadow-sm mb-4 d-none"
+                id="locationDetails"
+            >
+
+                <div class="card-header bg-white">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <h5 class="fw-bold mb-0">
+                            <i class="bi bi-geo-alt-fill me-2"></i>
+                            Location Details
+                        </h5>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            id="closeDetails"
+                            aria-label="Close"
+                        ></button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+
+                            <p class="text-secondary mb-1">
+                                Location
+                            </p>
+
+                            <h4
+                                class="fw-bold"
+                                id="detailLocation"
+                            >
+                                --
+                            </h4>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+
+                            <p class="text-secondary mb-1">
+                                Risk Level
+                            </p>
+
+                            <h4
+                                class="fw-bold"
+                                id="detailRisk"
+                            >
+                                --
+                            </h4>
+
+                        </div>
+
+
+                        <div class="col-6 col-md-3">
+
+                            <div class="border rounded p-3">
+
+                                <small class="text-secondary">
+                                    Risk Score
+                                </small>
+
+                                <h5
+                                    class="fw-bold mb-0"
+                                    id="detailScore"
+                                >
+                                    --
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-md-3">
+
+                            <div class="border rounded p-3">
+
+                                <small class="text-secondary">
+                                    Flood Risk
+                                </small>
+
+                                <h5
+                                    class="fw-bold mb-0"
+                                    id="detailFlood"
+                                >
+                                    --
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-md-3">
+
+                            <div class="border rounded p-3">
+
+                                <small class="text-secondary">
+                                    Landslide Risk
+                                </small>
+
+                                <h5
+                                    class="fw-bold mb-0"
+                                    id="detailLandslide"
+                                >
+                                    --
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-md-3">
+
+                            <div class="border rounded p-3">
+
+                                <small class="text-secondary">
+                                    Risk Type
+                                </small>
+
+                                <h5
+                                    class="fw-bold mb-0"
+                                    id="detailType"
+                                >
+                                    --
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+
+                        <a
+                            href="admin-live-map.html"
+                            class="btn btn-primary"
+                        >
+                            <i class="bi bi-map me-1"></i>
+                            Open Admin Live Map
+                        </a>
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-danger"
+                            id="createAlertButton"
+                        >
+                            <i class="bi bi-megaphone me-1"></i>
+                            Create Alert
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- LAST UPDATE -->
+            <!-- ============================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <div class="row align-items-center g-3">
+
+                        <div class="col-12 col-md-6">
+
+                            <h6 class="fw-bold mb-1">
+                                <i class="bi bi-clock-history me-2"></i>
+                                Monitoring Status
+                            </h6>
+
+                            <p class="text-secondary small mb-0">
+                                Last synchronization:
+                                <span id="lastUpdated">
+                                    Demo session
+                                </span>
+                            </p>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-6 text-md-end">
+
+                            <span class="badge text-bg-success">
+                                <i class="bi bi-check-circle me-1"></i>
+                                Monitoring Active
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- DISCLAIMER -->
+            <!-- ============================= -->
+
+            <div class="alert alert-secondary small mb-0">
+
+                <strong>Disclaimer:</strong>
+                LandSafe Connect provides AI-based risk assessment and
+                environmental information for decision support.
+                It does not replace official disaster-management warnings
+                or emergency services.
+
+            </div>
+
+        </main>
+
+    </div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- Custom JavaScript -->
+<script src="monitor-locations.js"></script>
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,6 +19,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         rel="stylesheet"
     >
+
 </head>
 
 
@@ -32,7 +34,7 @@
              SIDEBAR
         ====================================================== -->
 
-        <aside class="col-lg-3 col-xl-2 bg-dark text-white border-0">
+        <aside class="col-lg-3 col-xl-2 bg-dark text-white">
 
             <div class="p-4">
 
@@ -64,14 +66,11 @@
 
                 <!-- USER -->
 
-                <div class="bg-secondary bg-opacity-25 rounded-3 p-3 mb-4 border-0">
+                <div class="bg-secondary bg-opacity-25 rounded-3 p-3 mb-4">
 
                     <div class="d-flex align-items-center gap-3">
 
-                        <div
-                            class="bg-success rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                            style="width:42px;height:42px;"
-                        >
+                        <div class="bg-success rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 p-2">
 
                             <i class="bi bi-person-fill"></i>
 
@@ -101,13 +100,13 @@
                 </p>
 
 
-                <div class="list-group list-group-flush border-0 mb-4">
+                <div class="list-group list-group-flush mb-4">
 
 
                     <!-- Dashboard -->
 
                     <a
-                        href="dashboard.html"
+                        href="index.html"
                         class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
                     >
 
@@ -160,10 +159,10 @@
                     </a>
 
 
-                    <!-- Risk Map -->
+                    <!-- Live Risk Map -->
 
                     <a
-                        href="risk-map.html"
+                        href="live-risk-map.html"
                         class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
                     >
 
@@ -188,19 +187,7 @@
                     </a>
 
 
-                    <!-- Previous Risk Data -->
-
-                    <a
-                        href="history.html"
-                        class="list-group-item list-group-item-action bg-transparent text-white border-0 rounded-3 mb-1"
-                    >
-
-                        <i class="bi bi-clock-history me-2"></i>
-
-                        Previous Risk Data
-
-                    </a>
-
+                    
 
                     <!-- Sirens -->
 
@@ -225,7 +212,7 @@
                 </p>
 
 
-                <div class="list-group list-group-flush border-0">
+                <div class="list-group list-group-flush">
 
                     <a
                         href="profile.html"
@@ -294,30 +281,36 @@
             <div class="p-3 p-md-4 p-xl-5">
 
 
-                <!-- =================================================
-                     HEADER
-                ================================================== -->
+                <!-- HEADER -->
 
-                <div class="mb-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
 
-                    <h2 class="fw-bold mb-1">
-                        Report an Issue
-                    </h2>
+                    <div>
 
-                    <p class="text-secondary mb-0">
+                        <h2 class="fw-bold mb-1">
+                            Report an Issue
+                        </h2>
 
-                        Help us identify hazards and infrastructure
-                        problems in your area.
+                        <p class="text-secondary mb-0">
+                            Help identify hazards and infrastructure problems in your area.
+                        </p>
 
-                    </p>
+                    </div>
+
+
+                    <span class="badge bg-info-subtle text-info-emphasis rounded-pill px-3 py-2">
+
+                        <i class="bi bi-info-circle me-1"></i>
+
+                        Frontend Demo
+
+                    </span>
 
                 </div>
 
 
 
-                <!-- =================================================
-                     EMERGENCY ALERT
-                ================================================== -->
+                <!-- EMERGENCY ALERT -->
 
                 <div class="alert alert-danger border-0 shadow-sm mb-4">
 
@@ -331,13 +324,58 @@
                                 Emergency Situation?
                             </h6>
 
-                            <p class="small mb-0">
+                            <p class="small mb-2">
 
                                 If there is immediate danger to life,
-                                contact the appropriate emergency services
-                                instead of waiting for this report to be reviewed.
+                                do not wait for this report to be reviewed.
 
                             </p>
+
+                            <a
+                                href="tel:112"
+                                class="btn btn-danger btn-sm"
+                            >
+
+                                <i class="bi bi-telephone-fill me-1"></i>
+
+                                Call 112
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUCCESS MESSAGE
+                ================================================== -->
+
+                <div
+                    id="successMessage"
+                    class="alert alert-success border-0 shadow-sm d-none mb-4"
+                >
+
+                    <div class="d-flex gap-3">
+
+                        <i class="bi bi-check-circle-fill fs-4"></i>
+
+                        <div>
+
+                            <h6 class="fw-bold mb-1">
+                                Report Submitted Successfully
+                            </h6>
+
+                            <p class="small mb-1">
+                                Your issue has been recorded in this frontend demo.
+                            </p>
+
+                            <strong id="reportReference">
+                                Report ID: LS-DEMO
+                            </strong>
 
                         </div>
 
@@ -351,352 +389,561 @@
                      REPORT FORM
                 ================================================== -->
 
-                <div class="card border-0 shadow-sm mb-4">
-
-                    <div class="card-body p-4">
+                <form id="reportForm" novalidate>
 
 
-                        <div class="d-flex align-items-center gap-2 mb-4">
+                    <div class="card border-0 shadow-sm mb-4">
 
-                            <div class="bg-success-subtle text-success rounded-3 p-2">
-
-                                <i class="bi bi-flag-fill fs-5"></i>
-
-                            </div>
-
-                            <div>
-
-                                <h5 class="fw-bold mb-0">
-                                    Issue Details
-                                </h5>
-
-                                <small class="text-secondary">
-                                    Provide information about the issue.
-                                </small>
-
-                            </div>
-
-                        </div>
+                        <div class="card-body p-4">
 
 
+                            <!-- TITLE -->
 
-                        <!-- Issue Type -->
+                            <div class="d-flex align-items-center gap-2 mb-4">
 
-                        <div class="mb-4">
+                                <div class="bg-success-subtle text-success rounded-3 p-2">
 
-                            <label
-                                for="issueType"
-                                class="form-label fw-semibold"
-                            >
-                                Issue Type
-                            </label>
+                                    <i class="bi bi-flag-fill fs-5"></i>
 
+                                </div>
 
-                            <select
-                                id="issueType"
-                                class="form-select"
-                            >
+                                <div>
 
-                                <option selected disabled>
-                                    Select issue type
-                                </option>
+                                    <h5 class="fw-bold mb-0">
+                                        Issue Details
+                                    </h5>
 
-                                <option value="flood">
-                                    Flooding
-                                </option>
+                                    <small class="text-secondary">
+                                        Provide as much useful information as possible.
+                                    </small>
 
-                                <option value="landslide">
-                                    Landslide
-                                </option>
-
-                                <option value="water-level">
-                                    Rising Water Level
-                                </option>
-
-                                <option value="road">
-                                    Damaged Road
-                                </option>
-
-                                <option value="infrastructure">
-                                    Infrastructure Damage
-                                </option>
-
-                                <option value="drainage">
-                                    Blocked Drainage
-                                </option>
-
-                                <option value="other">
-                                    Other Hazard
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-
-                        <!-- Severity -->
-
-                        <div class="mb-4">
-
-                            <label
-                                for="severity"
-                                class="form-label fw-semibold"
-                            >
-                                Severity
-                            </label>
-
-
-                            <select
-                                id="severity"
-                                class="form-select"
-                            >
-
-                                <option selected disabled>
-                                    Select severity
-                                </option>
-
-                                <option value="low">
-                                    Low
-                                </option>
-
-                                <option value="moderate">
-                                    Moderate
-                                </option>
-
-                                <option value="high">
-                                    High
-                                </option>
-
-                                <option value="critical">
-                                    Critical
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-
-                        <!-- Location -->
-
-                        <div class="mb-4">
-
-                            <label
-                                for="location"
-                                class="form-label fw-semibold"
-                            >
-                                Location
-                            </label>
-
-
-                            <div class="input-group">
-
-                                <span class="input-group-text">
-
-                                    <i class="bi bi-geo-alt"></i>
-
-                                </span>
-
-
-                                <input
-                                    type="text"
-                                    id="location"
-                                    class="form-control"
-                                    placeholder="Enter affected location"
-                                >
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <!-- ISSUE TYPE -->
 
-                        <!-- State -->
-
-                        <div class="row g-3 mb-4">
-
-
-                            <div class="col-md-6">
+                            <div class="mb-4">
 
                                 <label
-                                    for="state"
+                                    for="issueType"
                                     class="form-label fw-semibold"
                                 >
-                                    State
+
+                                    Issue Type
+
                                 </label>
 
 
                                 <select
-                                    id="state"
+                                    id="issueType"
                                     class="form-select"
+                                    required
                                 >
 
-                                    <option selected disabled>
-                                        Select state
+                                    <option value="" selected disabled>
+                                        Select issue type
                                     </option>
 
-                                    <option>
-                                        Assam
+                                    <option value="flood">
+                                        Flooding
                                     </option>
 
-                                    <option>
-                                        Meghalaya
+                                    <option value="landslide">
+                                        Landslide
                                     </option>
 
-                                    <option>
-                                        Arunachal Pradesh
+                                    <option value="water-level">
+                                        Rising Water Level
                                     </option>
 
-                                    <option>
-                                        Mizoram
+                                    <option value="road">
+                                        Damaged Road
                                     </option>
 
-                                    <option>
-                                        Nagaland
+                                    <option value="infrastructure">
+                                        Infrastructure Damage
                                     </option>
 
-                                    <option>
-                                        Manipur
+                                    <option value="drainage">
+                                        Blocked Drainage
                                     </option>
 
-                                    <option>
-                                        Tripura
-                                    </option>
-
-                                    <option>
-                                        Sikkim
+                                    <option value="other">
+                                        Other Hazard
                                     </option>
 
                                 </select>
 
+                                <div class="invalid-feedback">
+                                    Please select an issue type.
+                                </div>
+
                             </div>
 
 
-                            <div class="col-md-6">
+
+                            <!-- SEVERITY -->
+
+                            <div class="mb-4">
 
                                 <label
-                                    for="city"
+                                    for="severity"
                                     class="form-label fw-semibold"
                                 >
-                                    City / District
+
+                                    Severity
+
                                 </label>
 
 
-                                <input
-                                    type="text"
-                                    id="city"
-                                    class="form-control"
-                                    placeholder="Enter city or district"
+                                <select
+                                    id="severity"
+                                    class="form-select"
+                                    required
                                 >
 
-                            </div>
+                                    <option value="" selected disabled>
+                                        Select severity
+                                    </option>
 
-                        </div>
+                                    <option value="low">
+                                        Low
+                                    </option>
 
+                                    <option value="moderate">
+                                        Moderate
+                                    </option>
 
+                                    <option value="high">
+                                        High
+                                    </option>
 
-                        <!-- Description -->
+                                    <option value="critical">
+                                        Critical
+                                    </option>
 
-                        <div class="mb-4">
+                                </select>
 
-                            <label
-                                for="description"
-                                class="form-label fw-semibold"
-                            >
-                                Description
-                            </label>
-
-
-                            <textarea
-                                id="description"
-                                class="form-control"
-                                rows="5"
-                                placeholder="Describe what you observed..."
-                            ></textarea>
-
-
-                            <div class="form-text">
-
-                                Include useful details such as water level,
-                                visible cracks, blocked roads, damaged
-                                infrastructure, or other warning signs.
+                                <div class="invalid-feedback">
+                                    Please select the severity level.
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <!-- LOCATION -->
 
-                        <!-- Photo -->
+                            <div class="mb-4">
 
-                        <div class="mb-4">
+                                <label
+                                    for="location"
+                                    class="form-label fw-semibold"
+                                >
 
-                            <label
-                                for="photo"
-                                class="form-label fw-semibold"
-                            >
-                                Upload Photo
-                            </label>
+                                    Affected Location
 
-
-                            <input
-                                type="file"
-                                id="photo"
-                                class="form-control"
-                                accept="image/*"
-                            >
+                                </label>
 
 
-                            <div class="form-text">
+                                <div class="input-group">
 
-                                Optional. A clear photo can help with
-                                issue verification.
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="text"
+                                        id="location"
+                                        class="form-control"
+                                        placeholder="Enter affected location"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter the affected location.
+                                </div>
 
                             </div>
 
-                        </div>
 
 
+                            <!-- STATE + CITY -->
 
-                        <!-- Current Location -->
+                            <div class="row g-3 mb-4">
 
-                        <div class="border rounded-3 p-3 mb-4">
 
-                            <div class="d-flex gap-3 align-items-center">
+                                <div class="col-md-6">
 
-                                <div class="bg-primary-subtle text-primary rounded-3 p-2">
+                                    <label
+                                        for="state"
+                                        class="form-label fw-semibold"
+                                    >
 
-                                    <i class="bi bi-crosshair fs-5"></i>
+                                        State
+
+                                    </label>
+
+
+                                    <select
+                                        id="state"
+                                        class="form-select"
+                                        required
+                                    >
+
+                                        <option value="" selected disabled>
+                                            Select state
+                                        </option>
+
+                                        <option value="Assam">
+                                            Assam
+                                        </option>
+
+                                        <option value="Meghalaya">
+                                            Meghalaya
+                                        </option>
+
+                                        <option value="Arunachal Pradesh">
+                                            Arunachal Pradesh
+                                        </option>
+
+                                        <option value="Mizoram">
+                                            Mizoram
+                                        </option>
+
+                                        <option value="Nagaland">
+                                            Nagaland
+                                        </option>
+
+                                        <option value="Manipur">
+                                            Manipur
+                                        </option>
+
+                                        <option value="Tripura">
+                                            Tripura
+                                        </option>
+
+                                        <option value="Sikkim">
+                                            Sikkim
+                                        </option>
+
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        Please select a state.
+                                    </div>
 
                                 </div>
 
 
-                                <div class="flex-grow-1">
+                                <div class="col-md-6">
 
-                                    <h6 class="fw-bold mb-1">
-                                        Use Current Location
-                                    </h6>
+                                    <label
+                                        for="city"
+                                        class="form-label fw-semibold"
+                                    >
 
-                                    <small class="text-secondary">
+                                        City / District
 
-                                        Allow location access to attach
-                                        approximate coordinates to your report.
+                                    </label>
 
+
+                                    <input
+                                        type="text"
+                                        id="city"
+                                        class="form-control"
+                                        placeholder="Enter city or district"
+                                        required
+                                    >
+
+                                    <div class="invalid-feedback">
+                                        Please enter the city or district.
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="mb-4">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <label
+                                        for="description"
+                                        class="form-label fw-semibold"
+                                    >
+
+                                        Description
+
+                                    </label>
+
+                                    <small
+                                        id="characterCount"
+                                        class="text-secondary"
+                                    >
+                                        0 / 500
                                     </small>
 
                                 </div>
 
 
-                                <button
-                                    type="button"
-                                    class="btn btn-outline-primary"
-                                    id="locationBtn"
+                                <textarea
+                                    id="description"
+                                    class="form-control"
+                                    rows="5"
+                                    maxlength="500"
+                                    placeholder="Describe what you observed..."
+                                    required
+                                ></textarea>
+
+
+                                <div class="form-text">
+
+                                    Include useful details such as water level,
+                                    visible cracks, blocked roads, damaged
+                                    infrastructure, or warning signs.
+
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please describe the issue.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PHOTO -->
+
+                            <div class="mb-4">
+
+                                <label
+                                    for="photo"
+                                    class="form-label fw-semibold"
                                 >
 
-                                    <i class="bi bi-geo-alt me-1"></i>
+                                    Upload Photo
 
-                                    Detect
+                                </label>
+
+
+                                <input
+                                    type="file"
+                                    id="photo"
+                                    class="form-control"
+                                    accept="image/*"
+                                >
+
+
+                                <div class="form-text">
+
+                                    Optional. A clear photo can help with
+                                    future issue verification.
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PHOTO PREVIEW -->
+
+                            <div
+                                id="photoPreviewContainer"
+                                class="d-none mb-4"
+                            >
+
+                                <div class="border rounded-3 p-3">
+
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                        <strong>
+                                            Photo Preview
+                                        </strong>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-sm btn-outline-danger"
+                                            id="removePhoto"
+                                        >
+
+                                            <i class="bi bi-x-lg"></i>
+
+                                            Remove
+
+                                        </button>
+
+                                    </div>
+
+
+                                    <img
+                                        id="photoPreview"
+                                        src=""
+                                        alt="Selected issue photo preview"
+                                        class="img-fluid rounded-3"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- CURRENT LOCATION -->
+
+                            <div class="border rounded-3 p-3 mb-4">
+
+                                <div class="d-flex gap-3 align-items-center">
+
+                                    <div class="bg-primary-subtle text-primary rounded-3 p-2">
+
+                                        <i class="bi bi-crosshair fs-5"></i>
+
+                                    </div>
+
+
+                                    <div class="flex-grow-1">
+
+                                        <h6 class="fw-bold mb-1">
+                                            Use Current Location
+                                        </h6>
+
+                                        <small
+                                            id="locationStatus"
+                                            class="text-secondary"
+                                        >
+
+                                            Allow location access to attach
+                                            approximate coordinates.
+
+                                        </small>
+
+                                    </div>
+
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-primary"
+                                        id="locationBtn"
+                                    >
+
+                                        <i class="bi bi-geo-alt me-1"></i>
+
+                                        Detect
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- COORDINATES -->
+
+                            <div
+                                id="coordinatesBox"
+                                class="alert alert-primary d-none border-0 mb-4"
+                            >
+
+                                <div class="d-flex gap-2">
+
+                                    <i class="bi bi-pin-map-fill"></i>
+
+                                    <div>
+
+                                        <strong>
+                                            Location Coordinates
+                                        </strong>
+
+                                        <div
+                                            id="coordinatesText"
+                                            class="small"
+                                        >
+                                            Coordinates detected.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- EMERGENCY TOGGLE -->
+
+                            <div class="alert alert-warning border-0">
+
+                                <div class="form-check form-switch">
+
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        role="switch"
+                                        id="emergencyCheck"
+                                    >
+
+                                    <label
+                                        class="form-check-label fw-semibold"
+                                        for="emergencyCheck"
+                                    >
+
+                                        This issue requires urgent attention
+
+                                    </label>
+
+                                </div>
+
+                                <small class="d-block mt-2">
+
+                                    Select this only when the situation
+                                    may require immediate attention.
+
+                                </small>
+
+                            </div>
+
+
+
+                            <!-- ACTIONS -->
+
+                            <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-success px-4"
+                                    id="submitReport"
+                                >
+
+                                    <i class="bi bi-send me-2"></i>
+
+                                    Submit Report
+
+                                </button>
+
+
+                                <button
+                                    type="reset"
+                                    class="btn btn-outline-secondary px-4"
+                                    id="clearForm"
+                                >
+
+                                    <i class="bi bi-arrow-counterclockwise me-2"></i>
+
+                                    Clear
 
                                 </button>
 
@@ -704,77 +951,10 @@
 
                         </div>
 
-
-
-                        <!-- Emergency Toggle -->
-
-                        <div class="alert alert-warning border-0">
-
-                            <div class="form-check form-switch">
-
-                                <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    role="switch"
-                                    id="emergencyCheck"
-                                >
-
-                                <label
-                                    class="form-check-label fw-semibold"
-                                    for="emergencyCheck"
-                                >
-
-                                    This issue requires urgent attention
-
-                                </label>
-
-                            </div>
-
-                            <small class="d-block mt-2">
-
-                                Select this only when the reported situation
-                                may require immediate attention.
-
-                            </small>
-
-                        </div>
-
-
-
-                        <!-- Submit -->
-
-                        <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
-
-                            <button
-                                type="button"
-                                class="btn btn-success px-4"
-                                id="submitReport"
-                            >
-
-                                <i class="bi bi-send me-2"></i>
-
-                                Submit Report
-
-                            </button>
-
-
-                            <button
-                                type="reset"
-                                class="btn btn-outline-secondary px-4"
-                                id="clearForm"
-                            >
-
-                                <i class="bi bi-arrow-counterclockwise me-2"></i>
-
-                                Clear
-
-                            </button>
-
-                        </div>
-
                     </div>
 
-                </div>
+
+                </form>
 
 
 
@@ -794,14 +974,14 @@
                         <div class="row g-4">
 
 
-                            <!-- Step 1 -->
+                            <!-- STEP 1 -->
 
                             <div class="col-md-4">
 
                                 <div class="d-flex gap-3">
 
                                     <span
-                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center p-2 fs-6 flex-shrink-0"
+                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 p-2 fs-6"
                                     >
                                         1
                                     </span>
@@ -827,14 +1007,14 @@
                             </div>
 
 
-                            <!-- Step 2 -->
+                            <!-- STEP 2 -->
 
                             <div class="col-md-4">
 
                                 <div class="d-flex gap-3">
 
                                     <span
-                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center p-2 fs-6 flex-shrink-0"
+                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 p-2 fs-6"
                                     >
                                         2
                                     </span>
@@ -848,8 +1028,8 @@
 
                                         <p class="small text-secondary mb-0">
 
-                                            Report information can be reviewed
-                                            by authorized monitoring personnel.
+                                            Authorized monitoring personnel
+                                            can review submitted information.
 
                                         </p>
 
@@ -860,14 +1040,14 @@
                             </div>
 
 
-                            <!-- Step 3 -->
+                            <!-- STEP 3 -->
 
                             <div class="col-md-4">
 
                                 <div class="d-flex gap-3">
 
                                     <span
-                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center p-2 fs-6 flex-shrink-0"
+                                        class="badge bg-success rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0 p-2 fs-6"
                                     >
                                         3
                                     </span>
@@ -881,7 +1061,7 @@
 
                                         <p class="small text-secondary mb-0">
 
-                                            Verified issues can support
+                                            Verified reports can support
                                             monitoring and emergency response.
 
                                         </p>
@@ -918,9 +1098,9 @@
 
                             <p class="small mb-0 mt-1">
 
-                                This form is currently a frontend demonstration.
-                                Submitted reports are not yet connected to the
-                                LandSafe Connect backend or database.
+                                This page is currently a frontend demonstration.
+                                Reports are not yet connected to the LandSafe
+                                Connect backend or permanent database.
 
                             </p>
 
@@ -954,121 +1134,16 @@
 
 
 
-<!-- =============================================================
-     JAVASCRIPT
-============================================================== -->
-
-<script>
-
-    // Current Location
-
-    document.getElementById("locationBtn").addEventListener("click", function () {
-
-        const locationInput =
-            document.getElementById("location");
-
-        if (!navigator.geolocation) {
-
-            locationInput.value =
-                "Geolocation is not supported by this browser";
-
-            return;
-
-        }
-
-
-        locationInput.value =
-            "Detecting location...";
-
-
-        navigator.geolocation.getCurrentPosition(
-
-            function (position) {
-
-                const latitude =
-                    position.coords.latitude.toFixed(5);
-
-                const longitude =
-                    position.coords.longitude.toFixed(5);
-
-
-                locationInput.value =
-                    `Latitude: ${latitude}, Longitude: ${longitude}`;
-
-            },
-
-
-            function () {
-
-                locationInput.value =
-                    "Unable to detect location. Please enter manually.";
-
-            }
-
-        );
-
-    });
-
-
-
-    // Submit Report
-
-    document.getElementById("submitReport").addEventListener("click", function () {
-
-        const issueType =
-            document.getElementById("issueType").value;
-
-        const severity =
-            document.getElementById("severity").value;
-
-        const location =
-            document.getElementById("location").value;
-
-        const description =
-            document.getElementById("description").value;
-
-
-        if (
-            issueType === "Select issue type" ||
-            severity === "Select severity" ||
-            location.trim() === "" ||
-            description.trim() === ""
-        ) {
-
-            alert("Please fill in all required fields.");
-
-            return;
-
-        }
-
-
-        alert(
-            "Report submitted successfully!\\n\\n" +
-            "This is currently a frontend demo. " +
-            "Backend integration will be added later."
-        );
-
-    });
-
-
-
-    // Clear form
-
-    document.getElementById("clearForm").addEventListener("click", function () {
-
-        document.getElementById("location").value = "";
-
-    });
-
-</script>
-
-
-
 <!-- Bootstrap JS -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+
+<!-- Custom JavaScript -->
+
+<script src="report-issue.js"></script>
 
 
 </body>
