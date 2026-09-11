@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Reports | LandSafe Connect</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="col-12 col-md-3 col-lg-2 bg-dark text-white p-3">
+
+            <div class="text-center mb-4">
+
+                <i class="bi bi-shield-check fs-1 text-success"></i>
+
+                <h5 class="mt-2 mb-0">
+                    LandSafe Connect
+                </h5>
+
+                <small class="text-secondary">
+                    Admin Panel
+                </small>
+
+            </div>
+
+            <hr>
+
+            <div class="small text-uppercase text-secondary mb-2">
+                Administration
+            </div>
+
+            <nav class="nav flex-column gap-1">
+
+                <a href="admin.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+
+                <a href="analyze-reports.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-file-earmark-bar-graph me-2"></i>
+                    Analyse Reports
+                </a>
+
+                <a href="monitor-locations.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Monitor Locations
+                </a>
+
+                <a href="admin-alerts.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-bell me-2"></i>
+                    Alerts
+                </a>
+
+                <a href="admin-live-map.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-map me-2"></i>
+                    Live Risk Map
+                </a>
+
+                <a href="user-reports.html"
+                   class="nav-link active bg-success text-white rounded">
+                    <i class="bi bi-people me-2"></i>
+                    User Reports
+                </a>
+
+                <a href="emergency-requests.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-life-preserver me-2"></i>
+                    Emergency Requests
+                </a>
+
+                <a href="safety-management.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-shield-exclamation me-2"></i>
+                    Safety Management
+                </a>
+
+                <a href="risk-analytics.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-bar-chart-line me-2"></i>
+                    Risk Analytics
+                </a>
+
+              
+
+                <a href="system-settings.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-gear me-2"></i>
+                    System Settings
+                </a>
+
+            </nav>
+
+            <hr>
+
+            <a href="login.html"
+               class="nav-link text-danger">
+
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+
+            </a>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="col-12 col-md-9 col-lg-10 p-4">
+
+            <!-- HEADER -->
+
+            <div class="d-flex flex-wrap justify-content-between
+                        align-items-center mb-4">
+
+                <div>
+
+                    <h2 class="fw-bold mb-1">
+
+                        <i class="bi bi-people text-success me-2"></i>
+
+                        User Reports
+
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Review and manage environmental reports submitted
+                        by users.
+                    </p>
+
+                </div>
+
+                <span class="badge text-bg-warning mt-2 mt-md-0">
+                    Demo Data
+                </span>
+
+            </div>
+
+
+            <!-- DEMO NOTICE -->
+
+            <div class="alert alert-warning d-flex align-items-start gap-2">
+
+                <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+
+                <div>
+
+                    <strong>Demo Mode:</strong>
+
+                    The reports shown on this page are sample reports.
+                    Actual user reports will be received through the
+                    LandSafe Connect backend after integration.
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Total Reports
+                                    </small>
+
+                                    <h3 id="totalReports"
+                                        class="fw-bold mb-0">
+                                        12
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-file-earmark-text
+                                          fs-3 text-primary"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Pending
+                                    </small>
+
+                                    <h3 id="pendingReports"
+                                        class="fw-bold text-warning mb-0">
+                                        5
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-hourglass-split
+                                          fs-3 text-warning"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        High / Critical
+                                    </small>
+
+                                    <h3 id="highReports"
+                                        class="fw-bold text-danger mb-0">
+                                        5
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-exclamation-octagon
+                                          fs-3 text-danger"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Verified
+                                    </small>
+
+                                    <h3 id="verifiedReports"
+                                        class="fw-bold text-success mb-0">
+                                        4
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-check-circle
+                                          fs-3 text-success"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <div class="row g-3 align-items-end">
+
+                        <div class="col-12 col-lg-4">
+
+                            <label for="reportSearch"
+                                   class="form-label fw-semibold">
+
+                                Search Reports
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+
+                                <input
+                                    type="search"
+                                    id="reportSearch"
+                                    class="form-control"
+                                    placeholder="Search ID, location or user">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-2">
+
+                            <label for="typeFilter"
+                                   class="form-label fw-semibold">
+
+                                Report Type
+
+                            </label>
+
+                            <select id="typeFilter"
+                                    class="form-select">
+
+                                <option value="all">
+                                    All Types
+                                </option>
+
+                                <option value="Flood">
+                                    Flood
+                                </option>
+
+                                <option value="Landslide">
+                                    Landslide
+                                </option>
+
+                                <option value="Road Blockage">
+                                    Road Blockage
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-2">
+
+                            <label for="severityFilter"
+                                   class="form-label fw-semibold">
+
+                                Severity
+
+                            </label>
+
+                            <select id="severityFilter"
+                                    class="form-select">
+
+                                <option value="all">
+                                    All Severities
+                                </option>
+
+                                <option value="Critical">
+                                    Critical
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-2">
+
+                            <label for="statusFilter"
+                                   class="form-label fw-semibold">
+
+                                Status
+
+                            </label>
+
+                            <select id="statusFilter"
+                                    class="form-select">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Verified">
+                                    Verified
+                                </option>
+
+                                <option value="Rejected">
+                                    Rejected
+                                </option>
+
+                                <option value="Resolved">
+                                    Resolved
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-lg-2">
+
+                            <button
+                                id="clearFiltersBtn"
+                                class="btn btn-outline-secondary w-100">
+
+                                <i class="bi bi-arrow-counterclockwise me-1"></i>
+                                Clear
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= REPORT TABLE ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-header bg-white">
+
+                    <div class="d-flex justify-content-between
+                                align-items-center">
+
+                        <div>
+
+                            <h5 class="mb-1">
+                                Submitted Reports
+                            </h5>
+
+                            <small class="text-secondary">
+                                Review reports submitted by citizens
+                                and field users.
+                            </small>
+
+                        </div>
+
+                        <span id="visibleReportCount"
+                              class="badge text-bg-secondary">
+                            12 reports
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th>Report ID</th>
+
+                                <th>User</th>
+
+                                <th>Location</th>
+
+                                <th>Type</th>
+
+                                <th>Severity</th>
+
+                                <th>Status</th>
+
+                                <th>Submitted</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportsTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= REPORT DETAILS ================= -->
+
+            <div id="reportDetails"
+                 class="card border-0 shadow-sm mb-4 d-none">
+
+                <div class="card-header bg-white
+                            d-flex justify-content-between
+                            align-items-center">
+
+                    <h5 class="mb-0">
+
+                        <i class="bi bi-file-earmark-text
+                                  text-success me-2"></i>
+
+                        Report Details
+
+                    </h5>
+
+                    <button
+                        id="closeDetailsBtn"
+                        class="btn btn-sm btn-outline-secondary">
+
+                        <i class="bi bi-x-lg"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="row g-4">
+
+                        <div class="col-12 col-lg-8">
+
+                            <div class="d-flex flex-wrap
+                                        justify-content-between
+                                        align-items-start">
+
+                                <div>
+
+                                    <h4 id="detailReportId"
+                                        class="fw-bold mb-1">
+                                        —
+                                    </h4>
+
+                                    <p id="detailUser"
+                                       class="text-secondary mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+                                <span id="detailStatus"
+                                      class="badge text-bg-warning">
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <hr>
+
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Location
+                                    </small>
+
+                                    <p id="detailLocation"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Report Type
+                                    </small>
+
+                                    <p id="detailType"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Severity
+                                    </small>
+
+                                    <p id="detailSeverity"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Submitted
+                                    </small>
+
+                                    <p id="detailSubmitted"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4">
+
+                                <small class="text-secondary">
+                                    Description
+                                </small>
+
+                                <p id="detailDescription"
+                                   class="mt-1 mb-0">
+                                    —
+                                </p>
+
+                            </div>
+
+
+                            <div class="mt-4">
+
+                                <small class="text-secondary">
+                                    Coordinates
+                                </small>
+
+                                <p id="detailCoordinates"
+                                   class="fw-semibold mb-0">
+                                    —
+                                </p>
+
+                            </div>
+
+
+                            <div class="mt-4">
+
+                                <small class="text-secondary">
+                                    Evidence
+                                </small>
+
+                                <p id="detailEvidence"
+                                   class="mb-0">
+                                    —
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTION PANEL -->
+
+                        <div class="col-12 col-lg-4">
+
+                            <div class="card bg-light border">
+
+                                <div class="card-body">
+
+                                    <h6 class="fw-bold">
+                                        Admin Actions
+                                    </h6>
+
+                                    <p class="small text-secondary">
+                                        Update the report status after
+                                        reviewing the submitted information.
+                                    </p>
+
+
+                                    <div class="d-grid gap-2">
+
+                                        <button
+                                            id="verifyReportBtn"
+                                            class="btn btn-success">
+
+                                            <i class="bi bi-check-circle me-1"></i>
+                                            Verify Report
+
+                                        </button>
+
+
+                                        <button
+                                            id="rejectReportBtn"
+                                            class="btn btn-outline-danger">
+
+                                            <i class="bi bi-x-circle me-1"></i>
+                                            Reject Report
+
+                                        </button>
+
+
+                                        <button
+                                            id="resolveReportBtn"
+                                            class="btn btn-outline-primary">
+
+                                            <i class="bi bi-check2-all me-1"></i>
+                                            Mark Resolved
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= WORKFLOW ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <h5 class="fw-bold mb-3">
+                        Report Review Workflow
+                    </h5>
+
+                    <div class="row g-3">
+
+                        <div class="col-6 col-lg-3">
+
+                            <div class="d-flex align-items-center gap-2">
+
+                                <span
+                                    class="badge rounded-circle
+                                           bg-primary d-inline-flex
+                                           align-items-center
+                                           justify-content-center
+                                           flex-shrink-0 p-2 fs-6 lh-1">
+                                    1
+                                </span>
+
+                                <div>
+                                    <strong>Receive</strong>
+                                    <small class="d-block text-secondary">
+                                        User submits report
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-lg-3">
+
+                            <div class="d-flex align-items-center gap-2">
+
+                                <span
+                                    class="badge rounded-circle
+                                           bg-warning text-dark
+                                           d-inline-flex
+                                           align-items-center
+                                           justify-content-center
+                                           flex-shrink-0 p-2 fs-6 lh-1">
+                                    2
+                                </span>
+
+                                <div>
+                                    <strong>Review</strong>
+                                    <small class="d-block text-secondary">
+                                        Admin checks evidence
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-lg-3">
+
+                            <div class="d-flex align-items-center gap-2">
+
+                                <span
+                                    class="badge rounded-circle
+                                           bg-success d-inline-flex
+                                           align-items-center
+                                           justify-content-center
+                                           flex-shrink-0 p-2 fs-6 lh-1">
+                                    3
+                                </span>
+
+                                <div>
+                                    <strong>Verify</strong>
+                                    <small class="d-block text-secondary">
+                                        Confirm genuine report
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6 col-lg-3">
+
+                            <div class="d-flex align-items-center gap-2">
+
+                                <span
+                                    class="badge rounded-circle
+                                           bg-danger d-inline-flex
+                                           align-items-center
+                                           justify-content-center
+                                           flex-shrink-0 p-2 fs-6 lh-1">
+                                    4
+                                </span>
+
+                                <div>
+                                    <strong>Respond</strong>
+                                    <small class="d-block text-secondary">
+                                        Take necessary action
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DISCLAIMER -->
+
+            <div class="alert alert-secondary small">
+
+                <i class="bi bi-info-circle me-1"></i>
+
+                LandSafe Connect uses submitted reports as decision-support
+                information. Reports should be verified before they are used
+                for official emergency decisions.
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Page JavaScript -->
+
+<script src="user-reports.js"></script>
+
+</body>
+</html>

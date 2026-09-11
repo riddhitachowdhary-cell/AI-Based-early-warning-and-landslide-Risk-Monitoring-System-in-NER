@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Safety Management | LandSafe Connect</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="col-12 col-md-3 col-lg-2 bg-dark text-white p-3">
+
+            <div class="text-center mb-4">
+
+                <i class="bi bi-shield-check fs-1 text-success"></i>
+
+                <h5 class="mt-2 mb-0">
+                    LandSafe Connect
+                </h5>
+
+                <small class="text-secondary">
+                    Admin Panel
+                </small>
+
+            </div>
+
+            <hr>
+
+            <div class="small text-uppercase text-secondary mb-2">
+                Administration
+            </div>
+
+            <nav class="nav flex-column gap-1">
+
+                <a href="admin.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+
+                <a href="analyze-reports.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-file-earmark-bar-graph me-2"></i>
+                    Analyse Reports
+                </a>
+
+                <a href="monitor-locations.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Monitor Locations
+                </a>
+
+                <a href="admin-alerts.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-bell me-2"></i>
+                    Alerts
+                </a>
+
+                <a href="admin-live-map.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-map me-2"></i>
+                    Live Risk Map
+                </a>
+
+                <a href="user-reports.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-people me-2"></i>
+                    User Reports
+                </a>
+
+                <a href="emergency-requests.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-life-preserver me-2"></i>
+                    Emergency Requests
+                </a>
+
+                <a href="safety-management.html"
+                   class="nav-link active bg-success text-white rounded">
+                    <i class="bi bi-shield-exclamation me-2"></i>
+                    Safety Management
+                </a>
+
+                <a href="risk-analytics.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-bar-chart-line me-2"></i>
+                    Risk Analytics
+                </a>
+
+                
+
+                <a href="system-settings.html"
+                   class="nav-link text-white rounded">
+                    <i class="bi bi-gear me-2"></i>
+                    System Settings
+                </a>
+
+            </nav>
+
+            <hr>
+
+            <a href="login.html"
+               class="nav-link text-danger">
+
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+
+            </a>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="col-12 col-md-9 col-lg-10 p-4">
+
+            <!-- HEADER -->
+
+            <div class="d-flex flex-wrap justify-content-between
+                        align-items-center mb-4">
+
+                <div>
+
+                    <h2 class="fw-bold mb-1">
+
+                        <i class="bi bi-shield-exclamation
+                                  text-success me-2"></i>
+
+                        Safety Management
+
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+
+                        Manage safety guides and emergency instructions
+                        for LandSafe Connect users.
+
+                    </p>
+
+                </div>
+
+                <button
+                    id="addGuideBtn"
+                    class="btn btn-success mt-2 mt-md-0">
+
+                    <i class="bi bi-plus-circle me-1"></i>
+
+                    Add Safety Guide
+
+                </button>
+
+            </div>
+
+
+            <!-- DEMO NOTICE -->
+
+            <div class="alert alert-warning d-flex align-items-start gap-2">
+
+                <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+
+                <div>
+
+                    <strong>Demo Mode:</strong>
+
+                    The safety guides shown here are sample content.
+                    In the connected system, authorized administrators
+                    can manage safety instructions from the backend.
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SUMMARY CARDS ================= -->
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex
+                                        justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Total Guides
+                                    </small>
+
+                                    <h3 id="totalGuides"
+                                        class="fw-bold mb-0">
+                                        8
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-journal-text
+                                          fs-3 text-primary"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex
+                                        justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Active
+                                    </small>
+
+                                    <h3 id="activeGuides"
+                                        class="fw-bold text-success mb-0">
+                                        7
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-check-circle
+                                          fs-3 text-success"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex
+                                        justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Flood Guides
+                                    </small>
+
+                                    <h3 id="floodGuides"
+                                        class="fw-bold text-primary mb-0">
+                                        3
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-water
+                                          fs-3 text-primary"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-xl-3">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex
+                                        justify-content-between">
+
+                                <div>
+
+                                    <small class="text-secondary">
+                                        Landslide Guides
+                                    </small>
+
+                                    <h3 id="landslideGuides"
+                                        class="fw-bold text-danger mb-0">
+                                        3
+                                    </h3>
+
+                                </div>
+
+                                <i class="bi bi-triangle
+                                          fs-3 text-danger"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <div class="row g-3 align-items-end">
+
+                        <div class="col-12 col-lg-5">
+
+                            <label for="guideSearch"
+                                   class="form-label fw-semibold">
+
+                                Search Safety Guides
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-search"></i>
+
+                                </span>
+
+                                <input
+                                    type="search"
+                                    id="guideSearch"
+                                    class="form-control"
+                                    placeholder="Search title or description">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-2">
+
+                            <label for="categoryFilter"
+                                   class="form-label fw-semibold">
+
+                                Category
+
+                            </label>
+
+                            <select
+                                id="categoryFilter"
+                                class="form-select">
+
+                                <option value="all">
+                                    All Categories
+                                </option>
+
+                                <option value="Flood">
+                                    Flood
+                                </option>
+
+                                <option value="Landslide">
+                                    Landslide
+                                </option>
+
+                                <option value="Emergency">
+                                    Emergency
+                                </option>
+
+                                <option value="Shelter">
+                                    Shelter
+                                </option>
+
+                                <option value="Evacuation">
+                                    Evacuation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-2">
+
+                            <label for="statusFilter"
+                                   class="form-label fw-semibold">
+
+                                Status
+
+                            </label>
+
+                            <select
+                                id="statusFilter"
+                                class="form-select">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-3">
+
+                            <button
+                                id="clearFiltersBtn"
+                                class="btn btn-outline-secondary w-100">
+
+                                <i class="bi bi-arrow-counterclockwise
+                                          me-1"></i>
+
+                                Clear Filters
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SAFETY GUIDES TABLE ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-header bg-white">
+
+                    <div class="d-flex
+                                justify-content-between
+                                align-items-center">
+
+                        <div>
+
+                            <h5 class="mb-1">
+                                Safety Guides
+                            </h5>
+
+                            <small class="text-secondary">
+                                Manage information displayed to users.
+                            </small>
+
+                        </div>
+
+                        <span id="visibleGuideCount"
+                              class="badge text-bg-secondary">
+
+                            8 guides
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover
+                                  align-middle mb-0">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th>Guide ID</th>
+
+                                <th>Title</th>
+
+                                <th>Category</th>
+
+                                <th>Audience</th>
+
+                                <th>Status</th>
+
+                                <th>Last Updated</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="guidesTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= GUIDE DETAILS ================= -->
+
+            <div id="guideDetails"
+                 class="card border-0 shadow-sm mb-4 d-none">
+
+                <div class="card-header bg-white
+                            d-flex justify-content-between
+                            align-items-center">
+
+                    <h5 class="mb-0">
+
+                        <i class="bi bi-book text-success me-2"></i>
+
+                        Safety Guide Details
+
+                    </h5>
+
+                    <button
+                        id="closeDetailsBtn"
+                        class="btn btn-sm btn-outline-secondary">
+
+                        <i class="bi bi-x-lg"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="row g-4">
+
+                        <!-- GUIDE INFORMATION -->
+
+                        <div class="col-12 col-lg-8">
+
+                            <div class="d-flex
+                                        flex-wrap
+                                        justify-content-between
+                                        align-items-start">
+
+                                <div>
+
+                                    <h4 id="detailGuideTitle"
+                                        class="fw-bold mb-1">
+                                        —
+                                    </h4>
+
+                                    <p id="detailGuideId"
+                                       class="text-secondary mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+                                <span id="detailGuideStatus"
+                                      class="badge text-bg-success">
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <hr>
+
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Category
+                                    </small>
+
+                                    <p id="detailCategory"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Audience
+                                    </small>
+
+                                    <p id="detailAudience"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Last Updated
+                                    </small>
+
+                                    <p id="detailUpdated"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <small class="text-secondary">
+                                        Priority
+                                    </small>
+
+                                    <p id="detailPriority"
+                                       class="fw-semibold mb-0">
+                                        —
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4">
+
+                                <small class="text-secondary">
+                                    Description
+                                </small>
+
+                                <p id="detailDescription"
+                                   class="mt-1 mb-0">
+                                    —
+                                </p>
+
+                            </div>
+
+
+                            <div class="mt-4">
+
+                                <small class="text-secondary">
+                                    Key Instructions
+                                </small>
+
+                                <ul id="detailInstructions"
+                                    class="mt-2 mb-0">
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MANAGEMENT PANEL -->
+
+                        <div class="col-12 col-lg-4">
+
+                            <div class="card bg-light border">
+
+                                <div class="card-body">
+
+                                    <h6 class="fw-bold">
+                                        Guide Management
+                                    </h6>
+
+                                    <p class="small text-secondary">
+
+                                        Administrators can update the
+                                        availability of a safety guide.
+
+                                    </p>
+
+
+                                    <div class="d-grid gap-2">
+
+                                        <button
+                                            id="editGuideBtn"
+                                            class="btn btn-primary">
+
+                                            <i class="bi bi-pencil me-1"></i>
+
+                                            Edit Guide
+
+                                        </button>
+
+
+                                        <button
+                                            id="toggleGuideBtn"
+                                            class="btn btn-warning">
+
+                                            <i class="bi bi-toggle-on me-1"></i>
+
+                                            Change Status
+
+                                        </button>
+
+
+                                        <button
+                                            id="deleteGuideBtn"
+                                            class="btn btn-outline-danger">
+
+                                            <i class="bi bi-trash me-1"></i>
+
+                                            Delete Guide
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MANAGEMENT INFO ================= -->
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-body">
+
+                    <h5 class="fw-bold mb-3">
+
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+
+                        Safety Content Management
+
+                    </h5>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6 col-xl-3">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <i class="bi bi-water fs-3
+                                          text-primary"></i>
+
+                                <h6 class="fw-bold mt-2">
+                                    Flood Safety
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Evacuation, water safety and
+                                    flood emergency instructions.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-xl-3">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <i class="bi bi-triangle
+                                          fs-3 text-danger"></i>
+
+                                <h6 class="fw-bold mt-2">
+                                    Landslide Safety
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Safe movement, warning signs and
+                                    landslide evacuation guidance.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-xl-3">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <i class="bi bi-geo-alt fs-3
+                                          text-success"></i>
+
+                                <h6 class="fw-bold mt-2">
+                                    Shelter Guidance
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Information about safe shelters
+                                    and evacuation locations.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-xl-3">
+
+                            <div class="border rounded p-3 h-100">
+
+                                <i class="bi bi-bag-check fs-3
+                                          text-warning"></i>
+
+                                <h6 class="fw-bold mt-2">
+                                    Emergency Kit
+                                </h6>
+
+                                <p class="small text-secondary mb-0">
+
+                                    Essential emergency supplies
+                                    and preparation instructions.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DISCLAIMER -->
+
+            <div class="alert alert-secondary small">
+
+                <i class="bi bi-shield-check me-1"></i>
+
+                Safety information is intended for emergency
+                preparedness and decision support. Users should
+                follow official instructions from disaster-management
+                authorities and emergency services.
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Page JavaScript -->
+
+<script src="safety-management.js"></script>
+
+</body>
+</html>
