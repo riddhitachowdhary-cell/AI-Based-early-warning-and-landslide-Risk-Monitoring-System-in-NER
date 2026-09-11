@@ -16,97 +16,83 @@ L.tileLayer(
    DEMO RISK LOCATIONS
 ========================================================= */
 
-const riskLocations = [
+let riskLocations = [];
 
-    {
-        name: "Guwahati",
-        state: "Assam",
-        lat: 26.1445,
-        lng: 91.7362,
-        risk: 78,
-        hazard: "Flood",
-        rainfall: "Demo: 82 mm",
-        status: "High"
-    },
+function normalizeLocation(location) {
+    return {
+        id: location.id,
+        name: location.location,
+        district: location.district,
+        state: location.state,
+        lat: Number(location.latitude),
+        lng: Number(location.longitude),
+        population_exposed: Number(location.population_exposed || 0),
+        roads_exposed: Number(location.roads_exposed || 0),
+        critical_assets: Number(location.critical_assets || 0),
 
-    {
-        name: "Shillong",
-        state: "Meghalaya",
-        lat: 25.5788,
-        lng: 91.8933,
-        risk: 72,
-        hazard: "Landslide",
-        rainfall: "Demo: 76 mm",
-        status: "High"
-    },
+        // ML prediction is supplied later by the backend.
+        risk: null,
+        riskLevel: null,
+        rainfall: null,
+        status: "Awaiting ML prediction"
+    };
+}
 
-    {
-        name: "Aizawl",
-        state: "Mizoram",
-        lat: 23.7271,
-        lng: 92.7176,
-        risk: 65,
-        hazard: "Landslide",
-        rainfall: "Demo: 68 mm",
-        status: "High"
-    },
+async function loadRiskLocations() {
+    try {
+        const response = await fetch("../gis/locations.json", {
+            cache: "no-store"
+        });
 
-    {
-        name: "Gangtok",
-        state: "Sikkim",
-        lat: 27.3389,
-        lng: 88.6065,
-        risk: 55,
-        hazard: "Landslide",
-        rainfall: "Demo: 54 mm",
-        status: "Moderate"
-    },
+        if (!response.ok) {
+            throw new Error("Could not load gis/locations.json");
+        }
 
-    {
-        name: "Agartala",
-        state: "Tripura",
-        lat: 23.8315,
-        lng: 91.2868,
-        risk: 48,
-        hazard: "Flood",
-        rainfall: "Demo: 48 mm",
-        status: "Moderate"
-    },
+        const locations = await response.json();
 
-    {
-        name: "Kohima",
-        state: "Nagaland",
-        lat: 25.6751,
-        lng: 94.1086,
-        risk: 35,
-        hazard: "Landslide",
-        rainfall: "Demo: 35 mm",
-        status: "Moderate"
-    },
+        if (!Array.isArray(locations)) {
+            throw new Error("locations.json must contain an array");
+        }
 
-    {
-        name: "Itanagar",
-        state: "Arunachal Pradesh",
-        lat: 27.0844,
-        lng: 93.6053,
-        risk: 28,
-        hazard: "Landslide",
-        rainfall: "Demo: 25 mm",
-        status: "Low"
-    },
+        const ids = new Set();
 
-    {
-        name: "Imphal",
-        state: "Manipur",
-        lat: 24.8170,
-        lng: 93.9368,
-        risk: 25,
-        hazard: "Flood",
-        rainfall: "Demo: 22 mm",
-        status: "Low"
+        riskLocations = locations.map((location) => {
+            if (!location.id) {
+                throw new Error("Every GIS location must have an id");
+            }
+
+            if (ids.has(location.id)) {
+                throw new Error("Duplicate GIS location id: " + location.id);
+            }
+
+            ids.add(location.id);
+            return normalizeLocation(location);
+        });
+
+        renderRiskMarkers();
+        updateLocationCount();
+
+        console.log(
+            "GIS locations loaded:",
+            riskLocations.length
+        );
+    } catch (error) {
+        console.error("Failed to load GIS locations:", error);
+
+        const container = document.getElementById("selectedLocation");
+
+        if (container) {
+            container.innerHTML = `
+                <div class="alert alert-danger">
+                    <strong>GIS data could not be loaded.</strong><br>
+                    Please make sure the project is being opened through a
+                    local web server and that <code>gis/locations.json</code>
+                    exists.
+                </div>
+            `;
+        }
     }
-
-];
+}
 
 
 /* =========================================================
@@ -215,6 +201,9 @@ const rescueLayer = L.layerGroup().addTo(map);
 ========================================================= */
 
 function getRiskColor(risk) {
+    if (typeof risk !== "number" || Number.isNaN(risk)) {
+        return "#6c757d";
+    }
 
     if (risk >= 81) {
 
@@ -640,127 +629,117 @@ shelters.forEach(shelter => {
 
 function showLocationDetails(name) {
 
-
-    const location =
-        riskLocations.find(
-            item =>
-                item.name === name
-        );
-
+    const location = riskLocations.find(
+        item => item.name === name || item.id === name
+    );
 
     if (!location) {
-
+        console.warn("GIS location not found:", name);
         return;
-
     }
 
+    const selected = document.getElementById("selectedLocation");
 
-    const selected =
-        document.getElementById(
-            "selectedLocation"
-        );
+    if (!selected) {
+        console.warn("selectedLocation element not found.");
+        return;
+    }
 
+    const riskDisplay =
+        typeof location.risk === "number"
+            ? Math.round(location.risk) + "/100"
+            : "Pending ML prediction";
 
-    selected.className =
-        "alert alert-warning mb-0";
+    const riskStatus =
+        location.riskLevel ||
+        (typeof location.risk === "number"
+            ? getRiskStatus(location)
+            : "Awaiting ML prediction");
 
+    selected.className = "alert alert-warning mb-0";
 
     selected.innerHTML = `
-
         <div class="row g-3">
-
 
             <div class="col-12 col-lg-7">
 
-
-                <h5 class="fw-bold">
-
+                <h5 class="fw-bold mb-3">
                     ${location.name}
-
                 </h5>
 
+                <div class="mb-2">
+                    <strong>Location ID:</strong>
+                    ${location.id}
+                </div>
 
-                <div class="mb-1">
+                <div class="mb-2">
+                    <strong>District:</strong>
+                    ${location.district}
+                </div>
 
+                <div class="mb-2">
                     <strong>State:</strong>
-
                     ${location.state}
-
                 </div>
 
-
-                <div class="mb-1">
-
-                    <strong>Primary Hazard:</strong>
-
-                    ${location.hazard}
-
+                <div class="mb-2">
+                    <strong>Latitude:</strong>
+                    ${location.lat}
                 </div>
 
-
-                <div class="mb-1">
-
-                    <strong>Risk Score:</strong>
-
-                    ${location.risk}/100
-
+                <div class="mb-2">
+                    <strong>Longitude:</strong>
+                    ${location.lng}
                 </div>
-
-
-                <div>
-
-                    <strong>Rainfall:</strong>
-
-                    ${location.rainfall}
-
-                </div>
-
 
             </div>
-
 
             <div class="col-12 col-lg-5">
 
-
                 <div class="bg-white rounded p-3">
 
-
-                    <div class="small text-secondary">
-
-                        Current Risk Status
-
+                    <div class="small text-secondary mb-1">
+                        ML Risk Prediction
                     </div>
 
+                    <div class="fw-bold fs-5 mb-3">
+                        ${riskDisplay}
+                    </div>
 
-                    <h4 class="fw-bold text-danger">
+                    <div class="mb-3">
+                        <span class="badge text-bg-secondary">
+                            ${riskStatus}
+                        </span>
+                    </div>
 
-                        ${location.status}
+                    <hr>
 
-                    </h4>
+                    <div class="small text-secondary mb-2">
+                        Exposure Information
+                    </div>
 
+                    <div class="mb-2">
+                        <strong>Population Exposed:</strong>
+                        ${location.population_exposed.toLocaleString()}
+                    </div>
 
-                    <a
-                        href="risk-alert.html"
-                        class="btn btn-sm btn-danger"
-                    >
+                    <div class="mb-2">
+                        <strong>Roads Exposed:</strong>
+                        ${location.roads_exposed}
+                    </div>
 
-                        View Risk Alert
-
-                    </a>
-
+                    <div>
+                        <strong>Critical Assets:</strong>
+                        ${location.critical_assets}
+                    </div>
 
                 </div>
 
-
             </div>
 
-
         </div>
-
     `;
-
 }
-
 
 /* =========================================================
    FOCUS SHELTER
