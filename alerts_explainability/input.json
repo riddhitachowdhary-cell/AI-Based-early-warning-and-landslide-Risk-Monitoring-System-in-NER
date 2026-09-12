@@ -1,12 +1,23 @@
 {
     "location": {
         "state": "Sikkim",
-        "district": "Gangtok"
+        "district": "Gangtok",
+        "latitude": 27.3389,
+        "longitude": 88.6065
     },
     "risk_score": 0.87,
     "features": {
-        "rainfall": 145,
-        "soil_moisture": 0.82,
-        "slope": 37
+        "rainfall_24h_mm": 145,
+        "soil_moisture_pct": 82,
+        "slope_angle_deg": 37,
+        "rainfall_72h_mm": 285,
+        "pore_pressure_kpa": 42,
+        "ground_vibration": 0.18,
+        "distance_to_road_m": 85,
+        "distance_to_fault_m": 1200,
+        "elevation_m": 1650,
+        "aspect_deg": 145,
+        "ndvi": 0.42,
+        "ruggedness": 0.68
     }
 }
